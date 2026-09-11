@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swift Mechanics - Wigram | Fast & Honest Auto Care</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for standard icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        // Custom branding colors
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        swift: {
+                            red: '#e63946', // Energetic accent color
+                            navy: '#0f172a', // Trustworthy dark slate
+                            gray: '#f8fafc'  // Clean background
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-swift-gray text-gray-800 font-sans antialiased">
+
+    <!-- Top Announcement / Contact Bar -->
+    <div class="bg-swift-navy text-white text-sm py-2 px-4 hidden sm:block">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex space-x-6">
+                <span><i class="fa-solid fa-location-dot text-swift-red mr-2"></i> Not far from Sharkies Bar, Christchurch</span>
+                <span><i class="fa-solid fa-clock text-swift-red mr-2"></i> Mon-Fri: 10:00am - 3:00pm-ish give or take</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo area -->
+            <div class="flex items-center gap-3 cursor-pointer">
+                <i class="fa-solid fa-wrench text-3xl text-swift-red"></i>
+                <div>
+                    <h1 class="text-2xl font-extrabold text-swift-navy tracking-tight leading-none">SWIFT<span class="text-swift-red">MECHANICS</span></h1>
+                    <span class="text-xs text-gray-500 uppercase tracking-widest font-semibold">Wigram</span>
+                </div>
+            </div>
+            
+            <!-- Desktop Links -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#services" class="text-gray-600 hover:text-swift-red font-semibold transition">Services</a>
+                <a href="#about" class="text-gray-600 hover:text-swift-red font-semibold transition">About Us</a>
+                <a href="#contact" class="text-gray-600 hover:text-swift-red font-semibold transition">Contact</a>
+            </div>
+
+            <!-- Call to Action Buttons -->
+            <div class="flex items-center gap-4">
+                <a href="tel:0800000000" class="hidden md:flex items-center gap-2 text-swift-navy font-bold hover:text-swift-red transition">
+                    <i class="fa-solid fa-phone text-lg"></i> 0800 SWIFTY
+                </a>
+                <a href="#contact" class="bg-swift-red hover:bg-red-700 text-white px-5 py-2.5 rounded-md font-bold shadow-lg transition transform hover:-translate-y-0.5">
+                    Get a Quote
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative bg-swift-navy overflow-hidden">
+        <!-- Placeholder for Garage Background Image -->
+        <div class="absolute inset-0 opacity-20">
+            <img src="https://i.postimg.cc/d3jDkvS9/Gemini-Generated-Image-fkjuu2fkjuu2fkju.jpg" alt="Mechanic working on a car" class="w-full h-full object-cover">
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 flex flex-col items-start">
+            <span class="bg-swift-red text-white px-3 py-1 text-sm font-bold tracking-wider rounded-sm mb-4 uppercase">Swift & Honest Auto Care</span>
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 max-w-2xl">
+                Average Work<br>From a Average Bloke
+            </h2>
+            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-xl">
+                Christchruch's 148th Best Mechanic, but in the top 10 for Hoon Hay; Swifty will do WoF for a box of beers. Not too sketchy, just swift, solid car fixing.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                <a href="#contact" class="bg-swift-red text-white text-center px-8 py-4 rounded-md font-bold text-lg hover:bg-red-700 transition shadow-lg">
+                    Book an Appointment
+                </a>
+                <a href="tel:0800000000" class="bg-white text-swift-navy text-center px-8 py-4 rounded-md font-bold text-lg hover:bg-gray-100 transition shadow-lg">
+                    <i class="fa-solid fa-phone mr-2"></i> Call 0800 SWIFTY
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl font-extrabold text-swift-navy">Our Services</h3>
+                <div class="h-1 w-20 bg-swift-red mx-auto mt-4 mb-4"></div>
+                <p class="text-gray-500 max-w-2xl mx-auto">From quick safety checks to major repairs, we’ve got the tools and the talent to get you back on the road safely.</p>
+            </div>
+
+            <!-- Service Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="bg-swift-gray rounded-lg p-8 border border-gray-100 hover:shadow-xl transition group">
+                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition">
+                        <i class="fa-solid fa-clipboard-check text-2xl text-swift-red"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-swift-navy mb-3">WoF Inspections</h4>
+                    <p class="text-gray-600 mb-4">Will check this, that and the other</p>
+                    <span class="font-bold text-swift-navy">Cost: 2 boxes a beers, or a box of ciggies</span>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-swift-gray rounded-lg p-8 border border-gray-100 hover:shadow-xl transition group">
+                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition">
+                        <i class="fa-solid fa-oil-can text-2xl text-swift-red"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-swift-navy mb-3">Oil and Filter</h4>
+                    <p class="text-gray-600 mb-4">Swift As oil and filter changes.</p>
+                    <span class="font-bold text-swift-navy">From $149</span>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-swift-gray rounded-lg p-8 border border-gray-100 hover:shadow-xl transition group">
+                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition">
+                        <i class="fa-solid fa-car-burst text-2xl text-swift-red"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-swift-navy mb-3">Brake Repairs</h4>
+                    <p class="text-gray-600 mb-4">Pad replacements etc so ya car can stop.</p>
+                    <a href="#contact" class="text-swift-red font-bold hover:underline">Get Quote <i class="fa-solid fa-arrow-right text-sm"></i></a>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-swift-gray rounded-lg p-8 border border-gray-100 hover:shadow-xl transition group">
+                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition">
+                        <i class="fa-solid fa-laptop-medical text-2xl text-swift-red"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-swift-navy mb-3">Computer Diagnostics</h4>
+                    <p class="text-gray-600 mb-4">Check engine light on? We press the buttons on the computer to find why.</p>
+                    <span class="font-bold text-swift-navy">Scan only $100</span>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-swift-gray rounded-lg p-8 border border-gray-100 hover:shadow-xl transition group">
+                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition">
+                        <i class="fa-solid fa-car-battery text-2xl text-swift-red"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-swift-navy mb-3">Batteries & Electrical</h4>
+                    <p class="text-gray-600 mb-4">As long as it isn't a Tesla I'll have a look.</p>
+                    <a href="#contact" class="text-swift-red font-bold hover:underline">Get Quote <i class="fa-solid fa-arrow-right text-sm"></i></a>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-swift-gray rounded-lg p-8 border border-gray-100 hover:shadow-xl transition group">
+                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition">
+                        <i class="fa-solid fa-gear text-2xl text-swift-red"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-swift-navy mb-3">Clutch & Suspension</h4>
+                    <p class="text-gray-600 mb-4">Fixing clunky gears and bouncy rides. Shock absorbers, springs, and full clutch kits.</p>
+                    <a href="#contact" class="text-swift-red font-bold hover:underline">Get Quote <i class="fa-solid fa-arrow-right text-sm"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust / About Section -->
+    <section id="about" class="py-20 bg-swift-navy text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <!-- Placeholder for a picture of him / his shop -->
+                <div class="bg-gray-800 rounded-lg aspect-video flex items-center justify-center overflow-hidden border-4 border-gray-700 shadow-2xl relative">
+                    
+			<img src="https://i.postimg.cc/fWCw9HRc/Gemini-Generated-Image-9uxf2c9uxf2c9uxf.jpg alt="Mechanic working on a car" class="w-full h-full object-cover opacity-80">
+                     <!-- "Swifty" Badge -->
+                     <div class="absolute bottom-4 right-4 bg-swift-red text-white px-4 py-2 rounded-md font-bold shadow-lg transform rotate-[-3deg]">
+                         Wigram's Local Expert
+                     </div>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-3xl font-extrabold mb-4">No Nonsense. Just Good British Mechanical Work.</h3>
+                <p class="text-gray-300 mb-6 text-lg">
+                    Located in Wigram, Swift Mechanics was created after a bbq dinner at the Swifts. Look at his beautiful family, you know its gonna be good
+                </p>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center gap-3">
+                        <i class="fa-solid fa-check-circle text-swift-red text-xl"></i>
+                        <span class="font-medium text-lg">Fully Qualified (Or so he says)</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fa-solid fa-check-circle text-swift-red text-xl"></i>
+                        <span class="font-medium text-lg">Hates electric cars, keep that shit away.</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fa-solid fa-check-circle text-swift-red text-xl"></i>
+                        <span class="font-medium text-lg">Won't rip ya off</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Quote Form Section -->
+    <section id="contact" class="py-20 bg-swift-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+            
+            <!-- Contact Info -->
+            <div>
+                <h3 class="text-3xl font-extrabold text-swift-navy mb-6">Drop it off or get in touch</h3>
+                <p class="text-gray-600 mb-8 text-lg">Need a quote? Fill out the form or give us a call or just stop in on ya way to Sharkey's. If we don't answer I'm probably fixing a car.</p>
+                
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-white p-4 rounded-full shadow-sm text-swift-red text-xl">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-swift-navy text-lg">Location</h5>
+                            <p class="text-gray-600">Near Sharkey's,<br>Hoon Hay, Christchurch 8042</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start gap-4">
+                        <div class="bg-white p-4 rounded-full shadow-sm text-swift-red text-xl">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-swift-navy text-lg">Call Us</h5>
+                            <p class="text-gray-600 font-medium text-lg">0800 SWIFTY (0800 000 000)</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="bg-white p-4 rounded-full shadow-sm text-swift-red text-xl">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-swift-navy text-lg">Opening Hours</h5>
+                            <p class="text-gray-600">Mon - Fri: 8:00 AM - 5:00 PM<br>Saturday: Prefer not to but maybe<br>Sunday: Closed/Hungover As</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Form -->
+            <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-swift-red">
+                <h4 class="text-2xl font-bold text-swift-navy mb-6">Request a Quote / Booking</h4>
+                <!-- Formspree Endpoint placeholder -->
+                <form action="https://formspree.io/f/mjyvljyy" method="POST" class="space-y-4">
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">Your Name *</label>
+                            <input type="text" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-swift-red focus:border-swift-red outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">Phone Number *</label>
+                            <input type="tel" name="phone" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-swift-red focus:border-swift-red outline-none">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">Vehicle Make & Model</label>
+                            <input type="text" name="vehicle" placeholder="e.g. Toyota Hilux 2018" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-swift-red focus:border-swift-red outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">Rego (License Plate)</label>
+                            <input type="text" name="rego" placeholder="e.g. ABC123" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-swift-red focus:border-swift-red outline-none uppercase">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">What do you need done? *</label>
+                        <textarea name="message" rows="4" required placeholder="Describe the issue, or tell us what service you'd like to book..." class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-swift-red focus:border-swift-red outline-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-swift-navy text-white font-bold py-3 rounded-md hover:bg-gray-800 transition shadow-md flex justify-center items-center gap-2">
+                        Send Message <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                    <p class="text-xs text-gray-500 text-center mt-3">We usually reply within a couple of hours during business days.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8 text-center text-sm">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>&copy; 2026 Swift Mechanics Wigram. All rights reserved.</p>
+            <p class="mt-2">Website built by a mate.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
