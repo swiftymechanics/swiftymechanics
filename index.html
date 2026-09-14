@@ -3,302 +3,512 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swift Mechanics - Wigram | Fast & Honest Auto Care</title>
+    <title>Swift & Sons Auto Repairs | Honest Wigram Mechanics, Christchurch</title>
     <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome for standard icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <!-- Poppins: the one typeface used across the whole site, from body copy through to the brand lockup -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
     <script>
-        // Custom branding colors
+        // Custom branding colors, lifted directly from the Swift & Sons logo
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif']
+                    },
                     colors: {
                         swift: {
-                            red: '#e63946', // Energetic accent color
-                            navy: '#0f172a', // Trustworthy dark slate
-                            gray: '#f8fafc'  // Clean background
+                            blue: '#2a64b6',   // Vibrant logo blue (wordmark, wrenches, ring)
+                            navy: '#1a2639',   // Dark navy (bird, "AND SONS", outer ring)
+                            gray: '#f4f7f6'    // Clean, slightly cool background
                         }
                     }
                 }
             }
         }
     </script>
+
+    <style>
+        /* --- Brand wordmark: mirrors the logo's SWIFT / AND SONS / AUTO REPAIRS lockup --- */
+        .wordmark-swift {
+            font-weight: 800;
+            font-style: italic;
+            color: #2a64b6;
+            letter-spacing: -0.02em;
+            transform: skewX(-8deg);
+            display: inline-block;
+        }
+        .wordmark-sons {
+            font-weight: 800;
+            color: #1a2639;
+            letter-spacing: 0.01em;
+        }
+        .wordmark-auto {
+            font-weight: 700;
+            color: #2a64b6;
+            letter-spacing: 0.12em;
+        }
+        .wordmark-line {
+            height: 3px;
+            border-radius: 999px;
+            background: #2a64b6;
+            display: inline-block;
+        }
+        /* Decorative arcs echoing the ring around the bird in the logo */
+        .brand-ring::before, .brand-ring::after {
+            content: "";
+            position: absolute;
+            border: 6px solid #2a64b6;
+            border-radius: 999px;
+            opacity: 0.15;
+        }
+        .brand-ring::before {
+            width: 420px; height: 420px;
+            top: -60px; left: 50%;
+            transform: translateX(-115%);
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+        }
+        .brand-ring::after {
+            width: 420px; height: 420px;
+            top: -60px; left: 50%;
+            transform: translateX(15%);
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body class="bg-swift-gray text-gray-800 font-sans antialiased">
 
-    <!-- Top Announcement / Contact Bar -->
-    <div class="bg-swift-navy text-white text-sm py-2 px-4 hidden sm:block">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="flex space-x-6">
-                <span><i class="fa-solid fa-location-dot text-swift-red mr-2"></i> Not far from Sharkies Bar, Christchurch</span>
-                <span><i class="fa-solid fa-clock text-swift-red mr-2"></i> Mon-Fri: 10:00am - 3:00pm-ish give or take</span>
+    <!-- Top Announcement Bar -->
+    <div class="bg-swift-navy text-white text-xs md:text-sm py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span><i class="fa-solid fa-location-dot text-swift-blue mr-1 md:mr-2"></i> 123 Example Street, Wigram</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-clock text-swift-blue mr-2"></i> Mon-Fri: 8:00am - 5:00pm</span>
+            </div>
+            <div>
+                <span class="font-bold text-swift-blue">No surprises.</span> See our average pricing below.
             </div>
         </div>
     </div>
 
     <!-- Main Navigation -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Logo area -->
-            <div class="flex items-center gap-3 cursor-pointer">
-                <i class="fa-solid fa-wrench text-3xl text-swift-red"></i>
-                <div>
-                    <h1 class="text-2xl font-extrabold text-swift-navy tracking-tight leading-none">SWIFT<span class="text-swift-red">MECHANICS</span></h1>
-                    <span class="text-xs text-gray-500 uppercase tracking-widest font-semibold">Wigram</span>
-                </div>
-            </div>
-            
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 md:h-28 flex items-center justify-between">
+            <!-- Logo lockup: bird+car mark plus the wordmark set in real, crisp type -->
+            <a href="#" class="flex items-center gap-3 h-full py-3">
+                <img src="swift-mark.png" alt="Swift and Sons Auto Repairs" class="h-14 md:h-20 w-auto object-contain shrink-0">
+                <span class="leading-[0.85] hidden xs:block">
+                    <span class="block uppercase text-2xl md:text-3xl wordmark-swift">Swift</span>
+                    <span class="block uppercase text-[10px] md:text-xs wordmark-sons tracking-wide">and Sons</span>
+                    <span class="block uppercase text-[9px] md:text-[11px] wordmark-auto">Auto Repairs</span>
+                </span>
+            </a>
+
             <!-- Desktop Links -->
-            <div class="hidden md:flex space-x-8 items-center">
-                <a href="#services" class="text-gray-600 hover:text-swift-red font-semibold transition">Services</a>
-                <a href="#about" class="text-gray-600 hover:text-swift-red font-semibold transition">About Us</a>
-                <a href="#contact" class="text-gray-600 hover:text-swift-red font-semibold transition">Contact</a>
+            <div class="hidden lg:flex space-x-8 items-center">
+                <a href="#pricing" class="text-swift-navy hover:text-swift-blue font-bold transition">Upfront Pricing</a>
+                <a href="#about" class="text-gray-600 hover:text-swift-blue font-semibold transition">The Swifts</a>
+                <a href="#contact" class="text-gray-600 hover:text-swift-blue font-semibold transition">Contact</a>
             </div>
 
-            <!-- Call to Action Buttons -->
+            <!-- Action Buttons -->
             <div class="flex items-center gap-4">
-                <a href="tel:0800000000" class="hidden md:flex items-center gap-2 text-swift-navy font-bold hover:text-swift-red transition">
-                    <i class="fa-solid fa-phone text-lg"></i> 0800 SWIFTY
+                <a href="tel:0800000000" class="hidden md:flex items-center gap-2 text-swift-navy font-bold hover:text-swift-blue transition">
+                    <i class="fa-solid fa-phone"></i> 0800 SWIFTY
                 </a>
-                <a href="#contact" class="bg-swift-red hover:bg-red-700 text-white px-5 py-2.5 rounded-md font-bold shadow-lg transition transform hover:-translate-y-0.5">
-                    Get a Quote
+                <a href="#contact" class="bg-swift-blue hover:bg-blue-700 text-white px-5 py-2.5 rounded-full font-bold shadow-md transition transform hover:-translate-y-0.5">
+                    Book In
                 </a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="relative bg-swift-navy overflow-hidden">
-        <!-- Placeholder for Garage Background Image -->
-        <div class="absolute inset-0 opacity-20">
-            <img src="https://i.postimg.cc/d3jDkvS9/Gemini-Generated-Image-fkjuu2fkjuu2fkju.jpg" alt="Mechanic working on a car" class="w-full h-full object-cover">
-        </div>
-        
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 flex flex-col items-start">
-            <span class="bg-swift-red text-white px-3 py-1 text-sm font-bold tracking-wider rounded-sm mb-4 uppercase">Swift & Honest Auto Care</span>
-            <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 max-w-2xl">
-                Average Work<br>From a Average Bloke
-            </h2>
-            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-xl">
-                Christchruch's 148th Best Mechanic, top 10 for Hoon Hay, but No #1 in Ted's eyes; Swifty will do WoF for a box of beers. Not too sketchy, just swift, solid car fixing. Ted might play some Smoke on the Water while you wait
+    <!-- Hero Section: the logo and brand wordmark, given the room to be the star -->
+    <header class="relative overflow-hidden bg-gradient-to-b from-white to-swift-gray">
+        <div class="relative brand-ring max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-14 md:pt-20 md:pb-20 flex flex-col items-center text-center">
+
+           
+
+            <!-- The bird + car mark, large and unmissable -->
+            <img src="swift-mark.png" alt="Swift and Sons Auto Repairs" class="h-40 sm:h-52 md:h-64 w-auto object-contain mb-2 drop-shadow-sm">
+
+            <!-- The wordmark, set large in real type so it stays crisp at any size -->
+            <div class="leading-[0.85] mb-8 select-none">
+                <span class="block uppercase text-7xl sm:text-8xl md:text-9xl wordmark-swift">Swift</span>
+                <div class="flex items-center justify-center gap-4 mt-3 mb-2">
+                    <span class="wordmark-line w-8 md:w-12"></span>
+                    <span class="uppercase text-2xl sm:text-3xl md:text-4xl wordmark-sons">and Sons</span>
+                    <span class="wordmark-line w-8 md:w-12"></span>
+                </div>
+                <span class="block uppercase text-lg sm:text-xl md:text-2xl wordmark-auto">Auto Repairs</span>
+            </div>
+
+            <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-xl leading-relaxed">
+                We're tired of the sketchy garage stereotype. Get straightforward service & upfront pricing for standard WoF repairs. No bill shock, just swift, solid work.
             </p>
+
             <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                <a href="#contact" class="bg-swift-red text-white text-center px-8 py-4 rounded-md font-bold text-lg hover:bg-red-700 transition shadow-lg">
-                    Book an Appointment
+                <a href="#pricing" class="bg-swift-blue text-white text-center px-8 py-4 rounded font-bold text-lg hover:bg-blue-700 transition shadow-lg">
+                    Check Our Prices
                 </a>
-                <a href="tel:0800000000" class="bg-white text-swift-navy text-center px-8 py-4 rounded-md font-bold text-lg hover:bg-gray-100 transition shadow-lg">
-                    <i class="fa-solid fa-phone mr-2"></i> Call 0800 SWIFTY
+                <a href="#contact" class="bg-transparent border-2 border-swift-navy text-swift-navy text-center px-8 py-4 rounded font-bold text-lg hover:bg-swift-navy hover:text-white transition shadow-lg">
+                    Get in Touch
                 </a>
             </div>
         </div>
+
+        <!-- A thin car-silhouette line, echoing the one beneath the bird in the logo -->
+        <svg viewBox="0 0 1200 60" class="w-full h-auto text-swift-blue/30" preserveAspectRatio="none">
+            <path d="M0 45 C250 45 300 20 420 18 C520 16 560 40 650 40 C760 40 800 15 920 16 C1040 17 1080 42 1200 42" fill="none" stroke="currentColor" stroke-width="3"/>
+        </svg>
     </header>
 
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h3 class="text-3xl font-extrabold text-swift-navy">Our Services</h3>
-                <div class="h-1 w-20 bg-swift-red mx-auto mt-4 mb-4"></div>
-                <p class="text-gray-500 max-w-2xl mx-auto">From quick safety checks to major repairs, he's got the tools and the talent to get you back on the road safely.</p>
+    <!-- Interactive Pricing / Pill Toggle Section -->
+    <section id="pricing" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="flex items-center justify-center gap-4 mb-4">
+                    <span class="wordmark-line w-10"></span>
+                    <i class="fa-solid fa-tags text-2xl text-swift-blue"></i>
+                    <span class="wordmark-line w-10"></span>
+                </div>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-swift-navy">Average Repair Prices</h3>
+                <p class="text-gray-500 mt-4 text-lg">No secret pricing - this is what sets us apart from most garages. Select a category to see typical benchmark costs for our most common WoF repairs and services.</p>
             </div>
 
-            <!-- Service Cards Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Card 1 -->
-                <div class="bg-swift-gray rounded-lg p-8 border border-gray-100 hover:shadow-xl transition group">
-                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition">
-                        <i class="fa-solid fa-clipboard-check text-2xl text-swift-red"></i>
+            <!-- The Pill Toggle Navigation -->
+            <div class="flex flex-wrap justify-center gap-3 mb-10">
+                <button id="btn-tab-wof" onclick="showTab('tab-wof')" class="tab-btn active-tab bg-swift-blue text-white px-6 py-2.5 rounded-full font-bold shadow-sm transition">
+                    WoF & Servicing
+                </button>
+                <button id="btn-tab-brakes" onclick="showTab('tab-brakes')" class="tab-btn inactive-tab bg-gray-100 text-swift-navy hover:bg-gray-200 px-6 py-2.5 rounded-full font-bold shadow-sm transition">
+                    Brakes & Tyres
+                </button>
+                <button id="btn-tab-suspension" onclick="showTab('tab-suspension')" class="tab-btn inactive-tab bg-gray-100 text-swift-navy hover:bg-gray-200 px-6 py-2.5 rounded-full font-bold shadow-sm transition">
+                    Suspension & Steering
+                </button>
+            </div>
+
+            <!-- Tab Content Container -->
+            <div class="bg-swift-gray border border-gray-200 rounded-2xl p-4 md:p-8 shadow-inner">
+
+                <!-- Tab 1: WoF & Servicing -->
+                <div id="tab-wof" class="tab-content block animate-fade-in">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 flex justify-between items-center">
+                            <div>
+                                <h4 class="font-bold text-swift-navy text-lg">Standard WoF Inspection</h4>
+                                <p class="text-sm text-gray-500">Full safety check, most cars</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="block text-swift-blue font-extrabold text-xl">$65</span>
+                                <span class="text-xs text-gray-400">Flat rate</span>
+                            </div>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 flex justify-between items-center">
+                            <div>
+                                <h4 class="font-bold text-swift-navy text-lg">Basic Service</h4>
+                                <p class="text-sm text-gray-500">Oil, filter & safety checks</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="block text-swift-blue font-extrabold text-xl">~$180</span>
+                                <span class="text-xs text-gray-400">Parts + labour</span>
+                            </div>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 flex justify-between items-center">
+                            <div>
+                                <h4 class="font-bold text-swift-navy text-lg">Full Service</h4>
+                                <p class="text-sm text-gray-500">Fluids, filters & full inspection</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="block text-swift-blue font-extrabold text-xl">$300 - $400</span>
+                                <span class="text-xs text-gray-400">Parts + labour</span>
+                            </div>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 flex justify-between items-center">
+                            <div>
+                                <h4 class="font-bold text-swift-navy text-lg">Computer Diagnostic Scan</h4>
+                                <p class="text-sm text-gray-500">Check engine light fault read</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="block text-swift-blue font-extrabold text-xl">$110</span>
+                                <span class="text-xs text-gray-400">Flat rate</span>
+                            </div>
+                        </div>
                     </div>
-                    <h4 class="text-xl font-bold text-swift-navy mb-3">WoF Inspections</h4>
-                    <p class="text-gray-600 mb-4">Will check this, that and the other</p>
-                    <span class="font-bold text-swift-navy">Cost: 2 boxes a beers, or a box of ciggies</span>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="bg-swift-gray rounded-lg p-8 border border-gray-100 hover:shadow-xl transition group">
-                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition">
-                        <i class="fa-solid fa-oil-can text-2xl text-swift-red"></i>
+                <!-- Tab 2: Brakes & Tyres -->
+                <div id="tab-brakes" class="tab-content hidden animate-fade-in">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 flex justify-between items-center">
+                            <div>
+                                <h4 class="font-bold text-swift-navy text-lg">Front Brake Pads</h4>
+                                <p class="text-sm text-gray-500">Average hatchback/sedan</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="block text-swift-blue font-extrabold text-xl">$180 - $280</span>
+                                <span class="text-xs text-gray-400">Per axle</span>
+                            </div>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 flex justify-between items-center">
+                            <div>
+                                <h4 class="font-bold text-swift-navy text-lg">Brake Rotors (Machining)</h4>
+                                <p class="text-sm text-gray-500">If scored, not warped</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="block text-swift-blue font-extrabold text-xl">~$130</span>
+                                <span class="text-xs text-gray-400">Pair</span>
+                            </div>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 flex justify-between items-center">
+                            <div>
+                                <h4 class="font-bold text-swift-navy text-lg">Standard Tyre Replacement</h4>
+                                <p class="text-sm text-gray-500">Inc. fitting & balancing</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="block text-swift-blue font-extrabold text-xl">From $170</span>
+                                <span class="text-xs text-gray-400">Per tyre</span>
+                            </div>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 flex justify-between items-center">
+                            <div>
+                                <h4 class="font-bold text-swift-navy text-lg">Full Brake Job</h4>
+                                <p class="text-sm text-gray-500">Pads & rotors, one axle</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="block text-swift-blue font-extrabold text-xl">$350 - $450</span>
+                                <span class="text-xs text-gray-400">Parts + labour</span>
+                            </div>
+                        </div>
                     </div>
-                    <h4 class="text-xl font-bold text-swift-navy mb-3">Oil and Filter</h4>
-                    <p class="text-gray-600 mb-4">Swift As oil and filter changes.</p>
-                    <span class="font-bold text-swift-navy">From $149</span>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="bg-swift-gray rounded-lg p-8 border border-gray-100 hover:shadow-xl transition group">
-                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition">
-                        <i class="fa-solid fa-car-burst text-2xl text-swift-red"></i>
+                <!-- Tab 3: Suspension & Steering -->
+                <div id="tab-suspension" class="tab-content hidden animate-fade-in">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 flex justify-between items-center">
+                            <div>
+                                <h4 class="font-bold text-swift-navy text-lg">CV Boot Replacement</h4>
+                                <p class="text-sm text-gray-500">Common WoF failure item</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="block text-swift-blue font-extrabold text-xl">~$260</span>
+                                <span class="text-xs text-gray-400">Parts + labour</span>
+                            </div>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 flex justify-between items-center">
+                            <div>
+                                <h4 class="font-bold text-swift-navy text-lg">Sway Bar Links</h4>
+                                <p class="text-sm text-gray-500">Fixes the "clunk" over bumps</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="block text-swift-blue font-extrabold text-xl">$150 - $200</span>
+                                <span class="text-xs text-gray-400">Pair, fitted</span>
+                            </div>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 flex justify-between items-center">
+                            <div>
+                                <h4 class="font-bold text-swift-navy text-lg">Wheel Alignment</h4>
+                                <p class="text-sm text-gray-500">Front or four-wheel</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="block text-swift-blue font-extrabold text-xl">$95</span>
+                                <span class="text-xs text-gray-400">Flat rate</span>
+                            </div>
+                        </div>
+                        <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 flex justify-between items-center">
+                            <div>
+                                <h4 class="font-bold text-swift-navy text-lg">Shock Absorbers</h4>
+                                <p class="text-sm text-gray-500">Pair, standard suspension</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="block text-swift-blue font-extrabold text-xl">$350 - $420</span>
+                                <span class="text-xs text-gray-400">Parts + labour</span>
+                            </div>
+                        </div>
                     </div>
-                    <h4 class="text-xl font-bold text-swift-navy mb-3">Brake Repairs</h4>
-                    <p class="text-gray-600 mb-4">Pad replacements etc so ya car can stop.</p>
-                    <a href="#contact" class="text-swift-red font-bold hover:underline">Get Quote <i class="fa-solid fa-arrow-right text-sm"></i></a>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="bg-swift-gray rounded-lg p-8 border border-gray-100 hover:shadow-xl transition group">
-                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition">
-                        <i class="fa-solid fa-laptop-medical text-2xl text-swift-red"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-swift-navy mb-3">Computer Diagnostics</h4>
-                    <p class="text-gray-600 mb-4">Check engine light on? We press the buttons on the computer to find why.</p>
-                    <span class="font-bold text-swift-navy">Scan only $100</span>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="bg-swift-gray rounded-lg p-8 border border-gray-100 hover:shadow-xl transition group">
-                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition">
-                        <i class="fa-solid fa-car-battery text-2xl text-swift-red"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-swift-navy mb-3">Batteries & Electrical</h4>
-                    <p class="text-gray-600 mb-4">As long as it isn't a Tesla I'll have a look.</p>
-                    <a href="#contact" class="text-swift-red font-bold hover:underline">Get Quote <i class="fa-solid fa-arrow-right text-sm"></i></a>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="bg-swift-gray rounded-lg p-8 border border-gray-100 hover:shadow-xl transition group">
-                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition">
-                        <i class="fa-solid fa-gear text-2xl text-swift-red"></i>
-                    </div>
-                    <h4 class="text-xl font-bold text-swift-navy mb-3">Clutch & Suspension</h4>
-                    <p class="text-gray-600 mb-4">Give that car mo' bounce to the ounce</p>
-                    <a href="#contact" class="text-swift-red font-bold hover:underline">Get Quote <i class="fa-solid fa-arrow-right text-sm"></i></a>
                 </div>
 
             </div>
+
+            <!-- Disclaimer -->
+            <p class="text-center text-xs text-gray-400 mt-6 max-w-2xl mx-auto">
+                *prices listed are average  costs for standard vehicles, based on typical New Zealand pricing. Exact costs depend on your make, model, and part availability - we'll always confirm the exact total before starting any heavy work!
+            </p>
         </div>
     </section>
 
-    <!-- Trust / About Section -->
+    <!-- About Section -->
     <section id="about" class="py-20 bg-swift-navy text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-                <!-- Placeholder for a picture of him / his shop -->
-                <div class="bg-gray-800 rounded-lg aspect-video flex items-center justify-center overflow-hidden border-4 border-gray-700 shadow-2xl relative">
-                    
-			<img src="https://i.postimg.cc/fWCw9HRc/Gemini-Generated-Image-9uxf2c9uxf2c9uxf.jpg alt="Mechanic working on a car" class="w-full h-full object-cover opacity-80">
-                     <!-- "Swifty" Badge -->
-                     <div class="absolute bottom-4 right-4 bg-swift-red text-white px-4 py-2 rounded-md font-bold shadow-lg transform rotate-[-3deg]">
-                         Hoon Hay's Local Expert
-                     </div>
-                </div>
-            </div>
-            <div>
-                <h3 class="text-3xl font-extrabold mb-4">No Nonsense. Just Good British Mechanical Work.</h3>
-                <p class="text-gray-300 mb-6 text-lg">
-                    Located in Wigram, Swift Mechanics was created after a bbq dinner at the Swifts. Look at his beautiful family, you know its gonna be good
+            <div class="order-2 lg:order-1">
+                <h3 class="text-3xl font-extrabold mb-4">Family Run. No Nonsense.</h3>
+                <p class="text-gray-300 mb-6 text-lg leading-relaxed">
+                    Swift & Sons Auto Repairs was created (filler content goes here) - We realised that getting your car fixed shouldn't feel like you're being taken for a ride. Blah blah blah filler content
                 </p>
                 <ul class="space-y-4 mb-8">
-                    <li class="flex items-center gap-3">
-                        <i class="fa-solid fa-check-circle text-swift-red text-xl"></i>
-                        <span class="font-medium text-lg">Fully Qualified (Or so he says)</span>
+                    <li class="flex items-center gap-4 bg-gray-800/50 p-3 rounded-lg">
+                        <div class="w-10 h-10 rounded-full bg-swift-blue flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-wrench"></i>
+                        </div>
+                        <span class="font-medium">Fully qualified mechanics</span>
                     </li>
-                    <li class="flex items-center gap-3">
-                        <i class="fa-solid fa-check-circle text-swift-red text-xl"></i>
-                        <span class="font-medium text-lg">Hates electric cars, keep that shit away.</span>
+                    <li class="flex items-center gap-4 bg-gray-800/50 p-3 rounded-lg">
+                        <div class="w-10 h-10 rounded-full bg-swift-blue flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-plug-circle-xmark"></i>
+                        </div>
+                        <span class="font-medium">Blah blah blah(filler to be changed)</span>
                     </li>
-                    <li class="flex items-center gap-3">
-                        <i class="fa-solid fa-check-circle text-swift-red text-xl"></i>
-                        <span class="font-medium text-lg">Won't rip ya off</span>
+                    <li class="flex items-center gap-4 bg-gray-800/50 p-3 rounded-lg">
+                        <div class="w-10 h-10 rounded-full bg-swift-blue flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+                        <span class="font-medium">Honest pricing blah blah(filler)</span>
                     </li>
                 </ul>
             </div>
+            <!-- Updated Image Placeholder -->
+            <div class="order-1 lg:order-2">
+                <div class="bg-gray-800 rounded-2xl aspect-square lg:aspect-video flex items-center justify-center overflow-hidden shadow-2xl relative border-4 border-gray-700">
+                    <img src="https://iili.io/nBMQw5x.png" alt="Father and son mechanics" class="w-full h-full object-cover opacity-90">
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Contact & Quote Form Section -->
-    <section id="contact" class="py-20 bg-swift-gray">
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
-            
+
             <!-- Contact Info -->
             <div>
                 <h3 class="text-3xl font-extrabold text-swift-navy mb-6">Drop it off or get in touch</h3>
-                <p class="text-gray-600 mb-8 text-lg">Need a quote? Fill out the form or give us a call or just stop in on ya way to Sharkey's. If we don't answer I'm probably fixing a car.</p>
-                
+                <p class="text-gray-600 mb-8 text-lg">Fill out the form to book your repair, or just stop in blah blah filler content. If we don't answer the phone, we're probably under a car.</p>
+
                 <div class="space-y-6">
                     <div class="flex items-start gap-4">
-                        <div class="bg-white p-4 rounded-full shadow-sm text-swift-red text-xl">
+                        <div class="w-12 h-12 bg-swift-gray rounded-full flex items-center justify-center text-swift-blue text-xl border border-gray-200">
                             <i class="fa-solid fa-location-dot"></i>
                         </div>
-                        <div>
-                            <h5 class="font-bold text-swift-navy text-lg">Location</h5>
-                            <p class="text-gray-600">Near Sharkey's,<br>Hoon Hay, Christchurch 8042</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start gap-4">
-                        <div class="bg-white p-4 rounded-full shadow-sm text-swift-red text-xl">
-                            <i class="fa-solid fa-phone"></i>
-                        </div>
-                        <div>
-                            <h5 class="font-bold text-swift-navy text-lg">Call Us</h5>
-                            <p class="text-gray-600 font-medium text-lg">0800 SWIFTY (0800 000 000)</p>
+                        <div class="pt-1">
+                            <h5 class="font-bold text-swift-navy">Location</h5>
+                            <p class="text-gray-600">123 Example Street, Wigram, <br>Christchurch 8042</p>
                         </div>
                     </div>
 
                     <div class="flex items-start gap-4">
-                        <div class="bg-white p-4 rounded-full shadow-sm text-swift-red text-xl">
+                        <div class="w-12 h-12 bg-swift-gray rounded-full flex items-center justify-center text-swift-blue text-xl border border-gray-200">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="pt-1">
+                            <h5 class="font-bold text-swift-navy">Call Us</h5>
+                            <p class="text-swift-blue font-bold text-lg">0800 SWIFTY</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-swift-gray rounded-full flex items-center justify-center text-swift-blue text-xl border border-gray-200">
                             <i class="fa-solid fa-clock"></i>
                         </div>
-                        <div>
-                            <h5 class="font-bold text-swift-navy text-lg">Opening Hours</h5>
-                            <p class="text-gray-600">Mon - Fri: 8:00 AM - 5:00 PM<br>Saturday: Prefer not to but maybe<br>Sunday: Closed/Hungover As</p>
+                        <div class="pt-1">
+                            <h5 class="font-bold text-swift-navy">Hours</h5>
+                            <p class="text-gray-600">Mon - Fri: 8:00 AM - 5:00 PM<br>Saturday: By Appointment Only<br>Sunday: Closed</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- The Form -->
-            <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-swift-red">
-                <h4 class="text-2xl font-bold text-swift-navy mb-6">Request a Quote / Booking</h4>
-                <!-- Formspree Endpoint placeholder -->
+            <div class="bg-swift-gray p-8 rounded-2xl shadow-sm border border-gray-200">
+                <h4 class="text-2xl font-bold text-swift-navy mb-6">Book an Appointment</h4>
                 <form action="https://formspree.io/f/mjyvljyy" method="POST" class="space-y-4">
-                    
+
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-1">Your Name *</label>
-                            <input type="text" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-swift-red focus:border-swift-red outline-none">
+                            <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-swift-blue outline-none">
                         </div>
                         <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-1">Phone Number *</label>
-                            <input type="tel" name="phone" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-swift-red focus:border-swift-red outline-none">
+                            <input type="tel" name="phone" placeholder="Phone Number" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-swift-blue outline-none">
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-1">Vehicle Make & Model</label>
-                            <input type="text" name="vehicle" placeholder="e.g. Toyota Hilux 2018" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-swift-red focus:border-swift-red outline-none">
+                            <input type="text" name="vehicle" placeholder="Vehicle (e.g. Mazda Axela)" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-swift-blue outline-none">
                         </div>
                         <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-1">Rego (License Plate)</label>
-                            <input type="text" name="rego" placeholder="e.g. ABC123" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-swift-red focus:border-swift-red outline-none uppercase">
+                            <input type="text" name="rego" placeholder="Rego (Optional)" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-swift-blue outline-none uppercase">
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-1">What do you need done? *</label>
-                        <textarea name="message" rows="4" required placeholder="Describe the issue, or tell us what service you'd like to book..." class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-swift-red focus:border-swift-red outline-none"></textarea>
+                        <textarea name="message" rows="4" required placeholder="What needs doing? (e.g. WoF failed on front brakes, need a quote)" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-swift-blue outline-none"></textarea>
                     </div>
 
-                    <button type="submit" class="w-full bg-swift-navy text-white font-bold py-3 rounded-md hover:bg-gray-800 transition shadow-md flex justify-center items-center gap-2">
-                        Send Message <i class="fa-solid fa-paper-plane"></i>
+                    <button type="submit" class="w-full bg-swift-navy text-white font-bold py-4 rounded-lg hover:bg-gray-800 transition shadow-md flex justify-center items-center gap-2">
+                        Send to Workshop <i class="fa-solid fa-paper-plane"></i>
                     </button>
-                    <p class="text-xs text-gray-500 text-center mt-3">We usually reply within a couple of hours during business days, if ya lucky.</p>
                 </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-8 text-center text-sm">
-        <div class="max-w-7xl mx-auto px-4">
-            <p>&copy; 2026 Swift Mechanics Wigram. All rights reserved.</p>
-            <p class="mt-2">Website built by a brotha from anotha motha</p>
+    <footer class="bg-swift-gray border-t border-gray-200 py-12 text-center">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center">
+            <div class="flex items-center gap-3 mb-4">
+                <img src="swift-mark.png" alt="Swift and Sons Auto Repairs" class="h-12 w-auto object-contain">
+                <span class="leading-[0.85] text-left">
+                    <span class="block uppercase text-xl wordmark-swift">Swift</span>
+                    <span class="block uppercase text-[9px] wordmark-sons tracking-wide">and Sons</span>
+                    <span class="block uppercase text-[8px] wordmark-auto">Auto Repairs</span>
+                </span>
+            </div>
+            <p class="text-gray-500 text-sm">&copy; 2026 Swift & Sons Auto Repairs. Wigram, Christchurch.</p>
+            <p class="mt-2 text-gray-400 text-sm">Blah Blah Designs Inc.</p>
         </div>
     </footer>
+
+    <!-- JavaScript for Pill Toggle functionality -->
+    <script>
+        function showTab(tabId) {
+            // 1. Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(el => {
+                el.classList.add('hidden');
+                el.classList.remove('block');
+            });
+
+            // 2. Reset all buttons to inactive styling
+            document.querySelectorAll('.tab-btn').forEach(el => {
+                el.classList.remove('bg-swift-blue', 'text-white');
+                el.classList.add('bg-gray-100', 'text-swift-navy');
+            });
+
+            // 3. Show the selected tab content
+            const selectedTab = document.getElementById(tabId);
+            selectedTab.classList.remove('hidden');
+            selectedTab.classList.add('block');
+
+            // 4. Set the clicked button to active styling
+            const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.classList.remove('bg-gray-100', 'text-swift-navy');
+            activeBtn.classList.add('bg-swift-blue', 'text-white');
+        }
+    </script>
 
 </body>
 </html>
