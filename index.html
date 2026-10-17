@@ -4,14 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swift & Sons Auto Repairs</title>
-    <!-- Tailwind CSS CDN -->
+    
+    <!-- Open Graph / Facebook Social Preview Meta Tags -->
+    <meta property="og:title" content="Swift & Sons Auto Repairs">
+    <meta property="og:description" content="Professional auto repair workshop in Christchurch. Bringing Transparency to the Trade">
+    <meta property="og:image" content="https://raw.githubusercontent.com/swiftymechanics/swiftymechanics/refs/heads/main/OGSwiftnSonsThis.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="628">
+    <meta property="og:url" content="https://swiftandsons.co.nz">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/swiftymechanics/swiftymechanics/refs/heads/main/birdnobg.ico">
+    
+    <!-- Tailwind CSS (Handles layout and styling) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts Inter -->
+    
+    <!-- Google Fonts (Inter) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
+    
+    <!-- FontAwesome (Icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Brand Colours -->
     <script>
         tailwind.config = {
             theme: {
@@ -26,14 +42,7 @@
                             DEFAULT: '#0066cc',
                             hover: '#0052a3',
                             light: '#e8f3fc',
-                        },
-                        swift: {
-                            blue: '#0066cc',
-                            deep: '#0b2341',
-                            glow: '#338ce5'
-                        },
-                        petrol: '#0066cc',
-                        diesel: '#0b2341',
+                        }
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -42,28 +51,21 @@
             }
         }
     </script>
+
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f6f9fc;
-            color: #0b2341;
-        }
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .accordion-content.active {
-            max-height: 2000px;
-        }
-        .pump-badge {
-            transition: all 0.25s ease;
+        /* Removes the default browser triangle on dropdowns so we can use our custom arrow */
+        summary::-webkit-details-marker {
+            display: none;
         }
     </style>
 </head>
-<body class="antialiased text-slate-800 bg-slate-50 min-h-screen flex flex-col">
 
-    <!-- Top Contact Bar -->
+<body class="font-sans antialiased text-slate-800 bg-slate-50 min-h-screen flex flex-col">
+
+    <!-- =================================================================
+         1. TOP CONTACT BAR
+         HOW TO EDIT: Change your address, phone number, or hours below.
+         ================================================================= -->
     <header class="bg-navy text-white text-xs sm:text-sm py-2 px-4 border-b border-royal/30">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 text-center sm:text-left">
             <div class="flex flex-wrap justify-center sm:justify-start items-center gap-4 text-slate-200">
@@ -71,7 +73,8 @@
                     <i class="fa-solid fa-location-dot text-sky-400"></i> 11E Parkhouse Road, Wigram
                 </span>
                 <span class="hidden md:inline text-slate-500">•</span>
-                <a href="tel:0210447812" class="flex items-center gap-1.5 hover:text-sky-300 transition">
+                <!-- Note: Keep "tel:034200818" matching the displayed phone number -->
+                <a href="tel:034200818" class="flex items-center gap-1.5 hover:text-sky-300 transition">
                     <i class="fa-solid fa-phone text-sky-400"></i> 03 420 0818
                 </a>
                 <span class="hidden md:inline text-slate-500">•</span>
@@ -79,68 +82,73 @@
                     <i class="fa-regular fa-clock text-sky-400"></i> Mon-Fri: 8am - 5pm
                 </span>
             </div>
+            <!-- Construction Notice Banner (Delete this <div> block when the site is officially finished) -->
             <div class="flex items-center gap-2 text-xs font-semibold text-sky-300 bg-navy-light px-2.5 py-1 rounded-full border border-sky-400/40">
                 <i class="fa-solid fa-check-circle text-sky-400"></i> COMING SOON! - This website is still under construction and so maybe subject to change.
             </div>
         </div>
     </header>
 
-    <!-- Sticky Main Navigation -->
+
+    <!-- =================================================================
+         2. MAIN NAVIGATION BAR
+         ================================================================= -->
     <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            
             <!-- Brand Logo -->
             <a href="#" class="flex items-center gap-3 group">
                 <img src="https://raw.githubusercontent.com/swiftymechanics/swiftymechanics/684e09e1ebb10bd35fc425d39a5f0b68203854a4/SwiftSonsFullLogoNOBorder.svg"
-     alt="Swift & Sons Auto Repairs Logo" 
-     class="h-16 sm:h-20 w-auto object-contain transition group-hover:scale-105">
+                     alt="Swift & Sons Auto Repairs Logo" 
+                     class="h-16 sm:h-20 w-auto object-contain transition group-hover:scale-105">
+            </a>
 
-            <!-- Nav Links -->
+            <!-- Navigation Links -->
             <div class="hidden lg:flex items-center gap-8 font-semibold text-navy text-sm">
                 <a href="#services-pricing" class="hover:text-royal transition">Pricing & Services</a>
-                <a href="#highlights" class="hover:text-royal transition">Why Choose Us</a>
                 <a href="#about" class="hover:text-royal transition">About Us</a>
                 <a href="#booking" class="hover:text-royal transition">Contact & Booking</a>
             </div>
 
-            <!-- CTA Button -->
+            <!-- Book In Button -->
             <a href="#booking" class="bg-royal hover:bg-royal-hover text-white font-bold text-sm px-5 py-2.5 rounded-lg shadow-md hover:shadow-lg transition flex items-center gap-2">
                 <i class="fa-regular fa-calendar-check"></i> Book In
             </a>
         </div>
     </nav>
 
-<!-- Hero Section -->
+
+    <!-- =================================================================
+         3. HERO SECTION (Top Banner & Quote)
+         ================================================================= -->
     <section class="relative bg-gradient-to-b from-navy via-navy to-navy-dark text-white py-16 lg:py-24 overflow-hidden">
-        <!-- Accent Glow -->
+        <!-- Background Decorative Glows -->
         <div class="absolute -top-24 -right-24 w-96 h-96 bg-royal/40 rounded-full blur-3xl pointer-events-none"></div>
         <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-sky-500/20 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="max-w-4xl mx-auto text-center space-y-6">
 
+                <!-- Main Headline -->
                 <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight">
                     Bringing <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-sky-300 to-blue-200">Transparency</span> to the Trade.
                 </h1>
 
- <blockquote class="relative max-w-3xl mx-auto my-6 px-6 sm:px-10 py-6 rounded-2xl bg-white/5 border border-sky-400/20 backdrop-blur-sm text-center">
-    <!-- Decorative Quote Mark Accent -->
-    <i class="fa-solid fa-quote-left text-sky-400/30 text-3xl sm:text-4xl absolute -top-4 left-6 sm:left-8 bg-navy px-2"></i>
+                <!-- Owner Quote Box -->
+                <blockquote class="relative max-w-3xl mx-auto my-6 px-6 sm:px-10 py-6 rounded-2xl bg-white/5 border border-sky-400/20 backdrop-blur-sm text-center">
+                    <i class="fa-solid fa-quote-left text-sky-400/30 text-3xl sm:text-4xl absolute -top-4 left-6 sm:left-8 bg-navy px-2"></i>
+                    <p class="text-slate-100 text-base sm:text-lg lg:text-xl leading-relaxed italic font-light tracking-wide">
+                        With over 20 years of experience as a qualified mechanic, I’ve seen just how much repair bills can vary. At Swift & Sons, we believe in complete transparency, which is why we provide an average price list, so you always know what to expect.
+                    </p>
+                    <footer class="mt-4 pt-3 border-t border-sky-400/20 inline-flex items-center gap-2 text-xs sm:text-sm">
+                        <span class="w-6 h-0.5 bg-royal"></span>
+                        <span class="font-bold text-white uppercase tracking-wider">John Swift</span>
+                    </footer>
+                </blockquote>
 
-    <!-- Quote Body -->
-    <p class="text-slate-100 text-base sm:text-lg lg:text-xl leading-relaxed italic font-light tracking-wide">
-        With over 20 years of experience as a qualified mechanic, I’ve seen just how much repair bills can vary. At Swift & Sons, we believe in complete transparency, which is why we provide an average price list, so you always know what to expect.
-    </p>
-
-    <!-- Owner Attribution -->
-    <footer class="mt-4 pt-3 border-t border-sky-400/20 inline-flex items-center gap-2 text-xs sm:text-sm">
-        <span class="w-6 h-0.5 bg-royal"></span>
-        <span class="font-bold text-white uppercase tracking-wider">John Swift</span>
-
-    </footer>
-</blockquote>
-
-                <!-- Key Highlights Cards -->
+                <!-- 3 Highlight Cards -->
                 <div id="highlights" class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 max-w-4xl mx-auto">
+                    <!-- Card 1 -->
                     <div class="p-4 rounded-xl bg-white/10 backdrop-blur border border-sky-400/20 flex items-center gap-3.5 text-left">
                         <div class="w-11 h-11 rounded-lg bg-royal flex items-center justify-center text-white shrink-0 shadow-sm">
                             <i class="fa-solid fa-car text-lg"></i>
@@ -151,6 +159,7 @@
                         </div>
                     </div>
 
+                    <!-- Card 2 -->
                     <div class="p-4 rounded-xl bg-white/10 backdrop-blur border border-sky-400/20 flex items-center gap-3.5 text-left">
                         <div class="w-11 h-11 rounded-lg bg-sky-600 flex items-center justify-center text-white shrink-0 shadow-sm">
                             <i class="fa-solid fa-file-invoice-dollar text-lg"></i>
@@ -161,6 +170,7 @@
                         </div>
                     </div>
 
+                    <!-- Card 3 -->
                     <div class="p-4 rounded-xl bg-white/10 backdrop-blur border border-sky-400/20 flex items-center gap-3.5 text-left">
                         <div class="w-11 h-11 rounded-lg bg-navy-light border border-sky-400/50 flex items-center justify-center text-sky-300 shrink-0 shadow-sm">
                             <i class="fa-solid fa-bolt text-lg"></i>
@@ -172,7 +182,7 @@
                     </div>
                 </div>
 
-                <!-- CTA Buttons -->
+                <!-- Hero Action Buttons -->
                 <div class="flex flex-wrap gap-4 justify-center pt-4">
                     <a href="#services-pricing" class="bg-royal hover:bg-royal-hover text-white font-bold px-7 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition flex items-center gap-2">
                         <i class="fa-solid fa-list-check"></i> View Fixed Pricing Guide
@@ -186,226 +196,63 @@
         </div>
     </section>
 
-    <!-- Pricing & Services Section -->
+
+    <!-- =================================================================
+         4. PRICING & SERVICES SECTION
+         HOW TO EDIT DROPDOWNS:
+         - Each dropdown is wrapped in a <details> tag.
+         - If you want a dropdown to be OPEN automatically when the page loads,
+           just add the word "open" inside <details open class="...">.
+         - To make it start CLOSED, remove the word "open".
+         ================================================================= -->
     <section id="services-pricing" class="py-16 bg-slate-50">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <!-- Header & NZ Pump Fuel Selector -->
+            <!-- Section Header & Petrol/Diesel Toggle -->
             <div class="text-center space-y-4 mb-10">
                 <span class="text-royal font-bold text-xs uppercase tracking-widest bg-royal-light px-3.5 py-1.5 rounded-full border border-sky-200">Fair & Upfront Pricing</span>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-navy">Average Price List</h2>
                 <p class="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base">
                     Check out our standard pricing below. While most repairs fall into these exact ranges, costs can occasionally vary depending on specific vehicle requirements. Every price listed includes GST - no hidden surprises.
-
                 </p>
 
                 <!-- Fuel Pump Toggle Switch -->
                 <div class="inline-flex items-center bg-white p-1.5 rounded-2xl shadow-md border border-slate-200 mt-4">
-                    <button id="btn-petrol" onclick="setFuelType('petrol')" class="pump-badge flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm bg-royal text-white shadow-sm transition">
+                    <button id="btn-petrol" onclick="setFuelType('petrol')" class="flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm bg-royal text-white shadow-sm transition-all duration-200">
                         <i class="fa-solid fa-gas-pump"></i> Petrol Vehicle
                     </button>
-                    <button id="btn-diesel" onclick="setFuelType('diesel')" class="pump-badge flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm text-slate-600 hover:text-navy transition">
+                    <button id="btn-diesel" onclick="setFuelType('diesel')" class="flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm text-slate-600 hover:text-navy transition-all duration-200">
                         <i class="fa-solid fa-truck-pickup"></i> Diesel Vehicle
                     </button>
                 </div>
             </div>
 
-            <!-- Accordion Container -->
+            <!-- Price Dropdown List -->
             <div class="space-y-4">
 
-                <!-- 1. Common WOF Failures -->
-                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                    <button onclick="toggleAccordion('acc-1')" class="w-full text-left p-5 flex justify-between items-center hover:bg-slate-50 transition">
+                <!-- 1. Common WOF Failures (Starts OPEN) -->
+                <details open class="group bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                    <summary class="w-full p-5 flex justify-between items-center hover:bg-slate-50 transition cursor-pointer list-none">
                         <div class="flex items-center gap-3">
                             <div class="w-10 h-10 rounded-lg bg-navy text-white flex items-center justify-center font-bold">1</div>
                             <h3 class="font-bold text-lg text-navy">Common WOF Failures</h3>
                         </div>
-                        <i id="icon-acc-1" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
-                    </button>
-                    <div id="acc-1" class="accordion-content border-t border-slate-100 bg-slate-50/50">
-                        <div class="p-5 space-y-3">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
-                                <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
-                                    <span class="font-medium text-slate-700">Control Arm Bushes</span>
-                                    <span class="font-bold text-navy">$250 (bush) | $400 (complete arm)</span>
-                                </div>
-                                <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
-                                    <span class="font-medium text-slate-700">Front Brakes</span>
-                                    <span class="font-bold text-navy">$200 (pads) | $450 (pads & rotors)</span>
-                                </div>
-                                <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
-                                    <span class="font-medium text-slate-700">Rear Brakes</span>
-                                    <span class="font-bold text-navy">$200 (pads) | $450 (pads & rotors)</span>
-                                </div>
-                                <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
-                                    <span class="font-medium text-slate-700">Sway Bar Links</span>
-                                    <span class="font-bold text-navy">$150 per side</span>
-                                </div>
-                                <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
-                                    <span class="font-medium text-slate-700">Shock Absorbers (Front/Rear)</span>
-                                    <span class="font-bold text-navy">$350 per axle</span>
-                                </div>
-                                <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
-                                    <span class="font-medium text-slate-700">Front Suspension Top Mounts</span>
-                                    <span class="font-bold text-navy">$350</span>
-                                </div>
-                                <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
-                                    <span class="font-medium text-slate-700">Subframe Bushes</span>
-                                    <span class="font-bold text-navy">$600 (2 bushes) | $800 (4 bushes)</span>
-                                </div>
-                                <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
-                                    <span class="font-medium text-slate-700">Suspension Bump Stops</span>
-                                    <span class="font-bold text-navy">$150 per axle</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2. Tyres -->
-                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                    <button onclick="toggleAccordion('acc-2')" class="w-full text-left p-5 flex justify-between items-center hover:bg-slate-50 transition">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-lg bg-navy text-white flex items-center justify-center font-bold">2</div>
-                            <h3 class="font-bold text-lg text-navy">Tyres & Punctures</h3>
-                        </div>
-                        <i id="icon-acc-2" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
-                    </button>
-                    <div id="acc-2" class="accordion-content border-t border-slate-100 bg-slate-50/50">
-                        <div class="p-5 space-y-4">
-                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
-                                <div class="bg-white p-3 rounded-lg border border-slate-200 text-center">
-                                    <p class="text-xs text-slate-500 font-semibold">14" Tyre</p>
-                                    <p class="text-lg font-bold text-navy">$150</p>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg border border-slate-200 text-center">
-                                    <p class="text-xs text-slate-500 font-semibold">15" Tyre</p>
-                                    <p class="text-lg font-bold text-navy">$180</p>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg border border-slate-200 text-center">
-                                    <p class="text-xs text-slate-500 font-semibold">16" Tyre</p>
-                                    <p class="text-lg font-bold text-navy">$180</p>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg border border-slate-200 text-center">
-                                    <p class="text-xs text-slate-500 font-semibold">17" Tyre</p>
-                                    <p class="text-lg font-bold text-navy">$180</p>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg border border-slate-200 text-center">
-                                    <p class="text-xs text-slate-500 font-semibold">18" Tyre</p>
-                                    <p class="text-lg font-bold text-navy">$220</p>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg border border-slate-200 text-center">
-                                    <p class="text-xs text-slate-500 font-semibold">19" Tyre</p>
-                                    <p class="text-lg font-bold text-navy">$250</p>
-                                </div>
-                                <div class="bg-white p-3 rounded-lg border border-slate-200 text-center col-span-2 sm:col-span-2">
-                                    <p class="text-xs text-slate-500 font-semibold">Puncture Repairs</p>
-                                    <p class="text-lg font-bold text-navy">$40</p>
-                                </div>
-                            </div>
-                            <p class="text-xs text-slate-600 bg-white p-3 rounded-lg border border-slate-200 italic">
-                                <i class="fa-solid fa-circle-info text-royal mr-1"></i> Note: You’ll notice our average price is around $150–$180 per tyre because we don't fit cheap, low-grade rubber. Premium tyres deliver much better road grip (especially in the wet), quieter driving, and better durability, making them well worth the small extra investment for your safety.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-<!-- 3. Vehicle Servicing (With Fuel Type Pricing) -->
-<div class="bg-white rounded-xl shadow-md border-2 border-royal/30 overflow-hidden">
-    <button onclick="toggleAccordion('acc-3')" class="w-full text-left p-5 flex justify-between items-center bg-royal-light/40 hover:bg-royal-light transition">
-        <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-lg bg-royal text-white flex items-center justify-center font-bold">3</div>
-            <div>
-                <h3 class="font-bold text-lg text-navy">Vehicle Servicing Packages</h3>
-                <p class="text-xs text-royal font-semibold">Prices adapt to Petrol / Diesel toggle above</p>
-            </div>
-        </div>
-        <i id="icon-acc-3" class="fa-solid fa-chevron-down text-royal transition-transform"></i>
-    </button>
-    <div id="acc-3" class="accordion-content border-t border-slate-100 bg-white">
-        <div class="p-5 space-y-4">
-            
-            <!-- Gold Service -->
-            <div class="p-4 rounded-xl border border-sky-200 bg-sky-50/40 space-y-2">
-                <div class="flex justify-between items-center">
-                    <h4 class="font-extrabold text-navy flex items-center gap-2">
-                        <i class="fa-solid fa-crown text-royal"></i> Gold Service
-                    </h4>
-                    <span id="price-gold" class="text-xl font-black text-navy">$300</span>
-                </div>
-                <p class="text-xs text-slate-600 leading-relaxed">
-                    <strong>Includes:</strong> Full vehicle check, express groom and wash, oil & filter replacement, tyre pressure check, headlight polish, air/cabin/fuel filter check, spark plug check, and full mechanical check-over.
-                </p>
-            </div>
-
-            <!-- Silver Service -->
-            <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/60 space-y-2">
-                <div class="flex justify-between items-center">
-                    <h4 class="font-extrabold text-slate-800 flex items-center gap-2">
-                        <i class="fa-solid fa-medal text-slate-400"></i> Silver Service
-                    </h4>
-                    <span id="price-silver" class="text-xl font-black text-navy">$250</span>
-                </div>
-                <p class="text-xs text-slate-600 leading-relaxed">
-                    <strong>Includes:</strong> Full vehicle check, oil & filter replacement, tyre pressure check, headlight polish, air/cabin/fuel filter check, spark plug check, and full mechanical check-over (excludes wash and groom).
-                </p>
-            </div>
-
-            <!-- Bronze Service -->
-            <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/30 space-y-2">
-                <div class="flex justify-between items-center">
-                    <h4 class="font-extrabold text-slate-800 flex items-center gap-2">
-                        <i class="fa-solid fa-award text-slate-500"></i> Bronze Service
-                    </h4>
-                    <span id="price-bronze" class="text-xl font-black text-navy">$180</span>
-                </div>
-                <p class="text-xs text-slate-600 leading-relaxed">
-                    <strong>Includes:</strong> Oil & filter replacement, tyre pressure check, and light check.
-                </p>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-                <!-- 4. Overheating -->
-                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                    <button onclick="toggleAccordion('acc-4')" class="w-full text-left p-5 flex justify-between items-center hover:bg-slate-50 transition">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-lg bg-navy text-white flex items-center justify-center font-bold">4</div>
-                            <h3 class="font-bold text-lg text-navy">Overheating & Cooling Systems</h3>
-                        </div>
-                        <i id="icon-acc-4" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
-                    </button>
-                    <div id="acc-4" class="accordion-content border-t border-slate-100 bg-slate-50/50">
-                        <div class="p-5 grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300 group-open:rotate-180"></i>
+                    </summary>
+                    <div class="border-t border-slate-100 bg-slate-50/50 p-5">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
                             <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
-                                <span class="font-medium text-slate-700">Radiator Replacement</span>
-                                <span class="font-bold text-navy">$600</span>
+                                <span class="font-medium text-slate-700">Control Arm Bushes</span>
+                                <span class="font-bold text-navy">$250 (bush) | $400 (complete arm)</span>
                             </div>
                             <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
-                                <span class="font-medium text-slate-700">Thermostat</span>
-                                <span class="font-bold text-navy">$250</span>
+                                <span class="font-medium text-slate-700">Front Brakes</span>
+                                <span class="font-bold text-navy">$200 (pads) | $450 (pads & rotors)</span>
                             </div>
                             <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
-                                <span class="font-medium text-slate-700">Water Pump</span>
-                                <span class="font-bold text-navy">$350 <span class="text-xs font-normal text-slate-500">(varies if with cambelt)</span></span>
+                                <span class="font-medium text-slate-700">Rear Brakes</span>
+                                <span class="font-bold text-navy">$200 (pads) | $450 (pads & rotors)</span>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 5. Suspension -->
-                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                    <button onclick="toggleAccordion('acc-5')" class="w-full text-left p-5 flex justify-between items-center hover:bg-slate-50 transition">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-lg bg-navy text-white flex items-center justify-center font-bold">5</div>
-                            <h3 class="font-bold text-lg text-navy">Suspension Components</h3>
-                        </div>
-                        <i id="icon-acc-5" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
-                    </button>
-                    <div id="acc-5" class="accordion-content border-t border-slate-100 bg-slate-50/50">
-                        <div class="p-5 grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
                             <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
                                 <span class="font-medium text-slate-700">Sway Bar Links</span>
                                 <span class="font-bold text-navy">$150 per side</span>
@@ -420,196 +267,379 @@
                             </div>
                             <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
                                 <span class="font-medium text-slate-700">Subframe Bushes</span>
-                                <span class="font-bold text-navy">$600 (2) | $800 (4)</span>
+                                <span class="font-bold text-navy">$600 (2 bushes) | $800 (4 bushes)</span>
                             </div>
-                            <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center md:col-span-2">
+                            <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
                                 <span class="font-medium text-slate-700">Suspension Bump Stops</span>
                                 <span class="font-bold text-navy">$150 per axle</span>
                             </div>
                         </div>
                     </div>
-                </div>
+                </details>
 
-                <!-- 6. Brakes -->
-                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                    <button onclick="toggleAccordion('acc-6')" class="w-full text-left p-5 flex justify-between items-center hover:bg-slate-50 transition">
+                <!-- 2. Tyres & Punctures -->
+                <details class="group bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                    <summary class="w-full p-5 flex justify-between items-center hover:bg-slate-50 transition cursor-pointer list-none">
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-lg bg-navy text-white flex items-center justify-center font-bold">6</div>
-                            <h3 class="font-bold text-lg text-navy">Brakes</h3>
+                            <div class="w-10 h-10 rounded-lg bg-navy text-white flex items-center justify-center font-bold">2</div>
+                            <h3 class="font-bold text-lg text-navy">Tyres & Punctures</h3>
                         </div>
-                        <i id="icon-acc-6" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
-                    </button>
-                    <div id="acc-6" class="accordion-content border-t border-slate-100 bg-slate-50/50">
-                        <div class="p-5 grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
-                            <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
-                                <span class="font-medium text-slate-700">Front Brakes</span>
-                                <span class="font-bold text-navy">$200 (pads) | $450 (pads & rotors)</span>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300 group-open:rotate-180"></i>
+                    </summary>
+                    <div class="border-t border-slate-100 bg-slate-50/50 p-5 space-y-4">
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
+                            <div class="bg-white p-3 rounded-lg border border-slate-200 text-center">
+                                <p class="text-xs text-slate-500 font-semibold">14" Tyre</p>
+                                <p class="text-lg font-bold text-navy">$150</p>
                             </div>
-                            <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
-                                <span class="font-medium text-slate-700">Rear Brakes</span>
-                                <span class="font-bold text-navy">$200 (pads) | $450 (pads & rotors)</span>
+                            <div class="bg-white p-3 rounded-lg border border-slate-200 text-center">
+                                <p class="text-xs text-slate-500 font-semibold">15" Tyre</p>
+                                <p class="text-lg font-bold text-navy">$180</p>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg border border-slate-200 text-center">
+                                <p class="text-xs text-slate-500 font-semibold">16" Tyre</p>
+                                <p class="text-lg font-bold text-navy">$180</p>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg border border-slate-200 text-center">
+                                <p class="text-xs text-slate-500 font-semibold">17" Tyre</p>
+                                <p class="text-lg font-bold text-navy">$180</p>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg border border-slate-200 text-center">
+                                <p class="text-xs text-slate-500 font-semibold">18" Tyre</p>
+                                <p class="text-lg font-bold text-navy">$220</p>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg border border-slate-200 text-center">
+                                <p class="text-xs text-slate-500 font-semibold">19" Tyre</p>
+                                <p class="text-lg font-bold text-navy">$250</p>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg border border-slate-200 text-center col-span-2">
+                                <p class="text-xs text-slate-500 font-semibold">Puncture Repairs</p>
+                                <p class="text-lg font-bold text-navy">$40</p>
                             </div>
                         </div>
+                        <p class="text-xs text-slate-600 bg-white p-3 rounded-lg border border-slate-200 italic">
+                            <i class="fa-solid fa-circle-info text-royal mr-1"></i> Note: You’ll notice our average price is around $150-$180 per tyre because we don't fit cheap, low-grade rubber. Premium tyres deliver much better road grip (especially in the wet), quieter driving, and better durability, making them well worth the small extra investment for your safety.
+                        </p>
                     </div>
-                </div>
+                </details>
 
-                <!-- 7. Engine Lights -->
-                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                    <button onclick="toggleAccordion('acc-7')" class="w-full text-left p-5 flex justify-between items-center hover:bg-slate-50 transition">
+                <!-- 3. Vehicle Servicing Packages (Starts OPEN) -->
+                <details open class="group bg-white rounded-xl shadow-md border-2 border-royal/30 overflow-hidden">
+                    <summary class="w-full p-5 flex justify-between items-center bg-royal-light/40 hover:bg-royal-light transition cursor-pointer list-none">
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-lg bg-navy text-white flex items-center justify-center font-bold">7</div>
-                            <h3 class="font-bold text-lg text-navy">Engine Lights?</h3>
-                        </div>
-                        <i id="icon-acc-7" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
-                    </button>
-                    <div id="acc-7" class="accordion-content border-t border-slate-100 bg-slate-50/50">
-                        <div class="p-5 space-y-3">
-                            <div class="bg-white p-4 rounded-lg border border-slate-200 flex justify-between items-center">
-                                <div>
-                                    <h4 class="font-bold text-navy">Diagnostic Scan</h4>
-                                    <p class="text-xs text-slate-500">Engine light issues cannot be accurately priced until diagnosed via scan.</p>
-                                </div>
-                                <span class="font-black text-navy text-xl">$55</span>
+                            <div class="w-10 h-10 rounded-lg bg-royal text-white flex items-center justify-center font-bold">3</div>
+                            <div>
+                                <h3 class="font-bold text-lg text-navy">Vehicle Servicing Packages</h3>
+                                <p class="text-xs text-royal font-semibold">Prices adapt to Petrol / Diesel toggle above</p>
                             </div>
                         </div>
+                        <i class="fa-solid fa-chevron-down text-royal transition-transform duration-300 group-open:rotate-180"></i>
+                    </summary>
+                    <div class="border-t border-slate-100 bg-white p-5 space-y-4">
+                        
+                        <!-- Gold Service -->
+                        <div class="p-4 rounded-xl border border-sky-200 bg-sky-50/40 space-y-2">
+                            <div class="flex justify-between items-center">
+                                <h4 class="font-extrabold text-navy flex items-center gap-2">
+                                    <i class="fa-solid fa-crown text-royal"></i> Gold Service
+                                </h4>
+                                <span data-petrol="$300" data-diesel="$400" class="text-xl font-black text-navy">$300</span>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                <strong>Includes:</strong> Full vehicle check, express groom and wash, oil & filter replacement, tyre pressure check, headlight polish, air/cabin/fuel filter check, spark plug check, and full mechanical check-over.
+                            </p>
+                        </div>
+
+                        <!-- Silver Service -->
+                        <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/60 space-y-2">
+                            <div class="flex justify-between items-center">
+                                <h4 class="font-extrabold text-slate-800 flex items-center gap-2">
+                                    <i class="fa-solid fa-medal text-slate-400"></i> Silver Service
+                                </h4>
+                                <span data-petrol="$250" data-diesel="$350" class="text-xl font-black text-navy">$250</span>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                <strong>Includes:</strong> Full vehicle check, oil & filter replacement, tyre pressure check, headlight polish, air/cabin/fuel filter check, spark plug check, and full mechanical check-over (excludes wash and groom).
+                            </p>
+                        </div>
+
+                        <!-- Bronze Service -->
+                        <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/30 space-y-2">
+                            <div class="flex justify-between items-center">
+                                <h4 class="font-extrabold text-slate-800 flex items-center gap-2">
+                                    <i class="fa-solid fa-award text-slate-500"></i> Bronze Service
+                                </h4>
+                                <span data-petrol="$180" data-diesel="$220" class="text-xl font-black text-navy">$180</span>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                <strong>Includes:</strong> Oil & filter replacement, tyre pressure check, and light check.
+                            </p>
+                        </div>
+
                     </div>
-                </div>
+                </details>
 
-                <!-- 8. Cambelts & Drivebelts -->
-                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                    <button onclick="toggleAccordion('acc-8')" class="w-full text-left p-5 flex justify-between items-center hover:bg-slate-50 transition">
+                <!-- 4. Warrant of Fitness (WOF) Bundle (Moved to 4th position) -->
+                <details class="group bg-white rounded-xl shadow-md border-2 border-royal overflow-hidden">
+                    <summary class="w-full p-5 flex justify-between items-center bg-royal-light/50 hover:bg-royal-light transition cursor-pointer list-none">
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-lg bg-navy text-white flex items-center justify-center font-bold">8</div>
-                            <h3 class="font-bold text-lg text-navy">Cambelts & Drivebelts</h3>
-                        </div>
-                        <i id="icon-acc-8" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
-                    </button>
-                    <div id="acc-8" class="accordion-content border-t border-slate-100 bg-slate-50/50">
-                        <div class="p-5 grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
-                            <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
-                                <span class="font-medium text-slate-700">Cambelt Replacement (Average)</span>
-                                <span class="font-bold text-navy">$800</span>
-                            </div>
-                            <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
-                                <span class="font-medium text-slate-700">Drivebelt Replacement (Average)</span>
-                                <span class="font-bold text-navy">$150</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 9. Engine Replacement -->
-                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                    <button onclick="toggleAccordion('acc-9')" class="w-full text-left p-5 flex justify-between items-center hover:bg-slate-50 transition">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-lg bg-navy text-white flex items-center justify-center font-bold">9</div>
-                            <h3 class="font-bold text-lg text-navy">Engine Replacement</h3>
-                        </div>
-                        <i id="icon-acc-9" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
-                    </button>
-                    <div id="acc-9" class="accordion-content border-t border-slate-100 bg-slate-50/50">
-                        <div class="p-5 space-y-2">
-                            <div class="bg-white p-4 rounded-lg border border-slate-200 flex justify-between items-center">
-                                <div>
-                                    <h4 class="font-bold text-navy">Complete Engine Replacement</h4>
-                                    <p class="text-xs text-slate-500">Requires inspection and individual quote based on specific vehicle model.</p>
-                                </div>
-                                <span class="font-black text-navy text-lg">From $4,000</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 10. Transmission -->
-                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                    <button onclick="toggleAccordion('acc-10')" class="w-full text-left p-5 flex justify-between items-center hover:bg-slate-50 transition">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-lg bg-navy text-white flex items-center justify-center font-bold">10</div>
-                            <h3 class="font-bold text-lg text-navy">Transmission</h3>
-                        </div>
-                        <i id="icon-acc-10" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
-                    </button>
-                    <div id="acc-10" class="accordion-content border-t border-slate-100 bg-slate-50/50">
-                        <div class="p-5 grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
-                            <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
-                                <span class="font-medium text-slate-700">Transmission Servicing</span>
-                                <span class="font-bold text-navy">Approx. $350</span>
-                            </div>
-                            <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
-                                <span class="font-medium text-slate-700">Transmission Replacement</span>
-                                <span class="font-bold text-navy">Quote on request</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 11. Clutch -->
-                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                    <button onclick="toggleAccordion('acc-11')" class="w-full text-left p-5 flex justify-between items-center hover:bg-slate-50 transition">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-lg bg-navy text-white flex items-center justify-center font-bold">11</div>
-                            <h3 class="font-bold text-lg text-navy">Clutch</h3>
-                        </div>
-                        <i id="icon-acc-11" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
-                    </button>
-                    <div id="acc-11" class="accordion-content border-t border-slate-100 bg-slate-50/50">
-                        <div class="p-5">
-                            <div class="bg-white p-4 rounded-lg border border-slate-200 flex justify-between items-center text-sm">
-                                <span class="font-bold text-slate-800">Clutch Replacement</span>
-                                <span class="font-black text-navy text-lg">$900</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 12. Warrant of Fitness Special -->
-                <div class="bg-white rounded-xl shadow-md border-2 border-royal overflow-hidden">
-                    <button onclick="toggleAccordion('acc-12')" class="w-full text-left p-5 flex justify-between items-center bg-royal-light/50 hover:bg-royal-light transition">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-lg bg-royal text-white flex items-center justify-center font-bold">12</div>
+                            <div class="w-10 h-10 rounded-lg bg-royal text-white flex items-center justify-center font-bold">4</div>
                             <div>
                                 <h3 class="font-bold text-lg text-navy">Warrant of Fitness (WOF) Bundle</h3>
                                 <span class="text-xs bg-navy text-white font-semibold px-2 py-0.5 rounded">Popular Combo</span>
                             </div>
                         </div>
-                        <i id="icon-acc-12" class="fa-solid fa-chevron-down text-royal transition-transform"></i>
-                    </button>
-                    <div id="acc-12" class="accordion-content border-t border-slate-100 bg-white">
-                        <div class="p-5 space-y-3">
-                            <div class="flex justify-between items-center bg-sky-50 p-4 rounded-xl border border-sky-200">
-                                <h4 class="font-bold text-navy">Warrant & Service Special</h4>
-                                <span class="text-2xl font-black text-royal">$300</span>
+                        <i class="fa-solid fa-chevron-down text-royal transition-transform duration-300 group-open:rotate-180"></i>
+                    </summary>
+                    <div class="border-t border-slate-100 bg-white p-5 space-y-3">
+                        <div class="flex justify-between items-center bg-sky-50 p-4 rounded-xl border border-sky-200">
+                            <h4 class="font-bold text-navy">Warrant & Service Special</h4>
+                            <span class="text-2xl font-black text-royal">$300</span>
+                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed bg-slate-50 p-3 rounded-lg border border-slate-200">
+                            <i class="fa-solid fa-circle-info text-royal mr-1"></i> 
+                            <strong>Note:</strong> We currently offer warrant and service specials using a third-party tester while awaiting an on-site testing partner. The service will only go ahead if the warrant passes; otherwise, we will contact you to discuss any additional repair costs.
+                        </p>
+                    </div>
+                </details>
+
+                <!-- 5. Pre-Purchase Inspection (PPI) (Moved to 5th position) -->
+                <details class="group bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                    <summary class="w-full p-5 flex justify-between items-center hover:bg-slate-50 transition cursor-pointer list-none">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-navy text-white flex items-center justify-center font-bold">5</div>
+                            <h3 class="font-bold text-lg text-navy">Pre-Purchase Inspection (PPI)</h3>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300 group-open:rotate-180"></i>
+                    </summary>
+                    <div class="border-t border-slate-100 bg-slate-50/50 p-5">
+                        <div class="bg-white p-4 rounded-lg border border-slate-200 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
+                            <div>
+                                <h4 class="font-bold text-navy flex items-center gap-2">
+                                    <i class="fa-solid fa-clipboard-check text-royal"></i> Comprehensive Pre-Purchase Inspection
+                                </h4>
+                                <p class="text-xs text-slate-500 mt-1">
+                                    Get peace of mind before buying a car and have one of our experienced mechanics do a thorough inspection.
+                                </p>
                             </div>
-                            <p class="text-xs text-slate-600 leading-relaxed bg-slate-50 p-3 rounded-lg border border-slate-200">
-                                <i class="fa-solid fa-circle-info text-royal mr-1"></i> 
-                                <strong>Note:</strong> We currently offer warrant and service specials using a third-party tester while awaiting an on-site testing partner. The service will only go ahead if the warrant passes; otherwise, we will contact you to discuss any additional repair costs.
-                            </p>
+                            <span class="font-black text-navy text-xl shrink-0">$120</span>
                         </div>
                     </div>
-                </div>
+                </details>
+
+                <!-- 6. Overheating & Cooling Systems -->
+                <details class="group bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                    <summary class="w-full p-5 flex justify-between items-center hover:bg-slate-50 transition cursor-pointer list-none">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-navy text-white flex items-center justify-center font-bold">6</div>
+                            <h3 class="font-bold text-lg text-navy">Overheating & Cooling Systems</h3>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300 group-open:rotate-180"></i>
+                    </summary>
+                    <div class="border-t border-slate-100 bg-slate-50/50 p-5 grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
+                        <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
+                            <span class="font-medium text-slate-700">Radiator Replacement</span>
+                            <span class="font-bold text-navy">$600</span>
+                        </div>
+                        <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
+                            <span class="font-medium text-slate-700">Thermostat</span>
+                            <span class="font-bold text-navy">$250</span>
+                        </div>
+                        <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
+                            <span class="font-medium text-slate-700">Water Pump</span>
+                            <span class="font-bold text-navy">$350 <span class="text-xs font-normal text-slate-500">(varies if with cambelt)</span></span>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- 7. Suspension Components -->
+                <details class="group bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                    <summary class="w-full p-5 flex justify-between items-center hover:bg-slate-50 transition cursor-pointer list-none">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-navy text-white flex items-center justify-center font-bold">7</div>
+                            <h3 class="font-bold text-lg text-navy">Suspension Components</h3>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300 group-open:rotate-180"></i>
+                    </summary>
+                    <div class="border-t border-slate-100 bg-slate-50/50 p-5 grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                        <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
+                            <span class="font-medium text-slate-700">Sway Bar Links</span>
+                            <span class="font-bold text-navy">$150 per side</span>
+                        </div>
+                        <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
+                            <span class="font-medium text-slate-700">Shock Absorbers (Front/Rear)</span>
+                            <span class="font-bold text-navy">$350 per axle</span>
+                        </div>
+                        <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
+                            <span class="font-medium text-slate-700">Front Suspension Top Mounts</span>
+                            <span class="font-bold text-navy">$350</span>
+                        </div>
+                        <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
+                            <span class="font-medium text-slate-700">Subframe Bushes</span>
+                            <span class="font-bold text-navy">$600 (2) | $800 (4)</span>
+                        </div>
+                        <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center md:col-span-2">
+                            <span class="font-medium text-slate-700">Suspension Bump Stops</span>
+                            <span class="font-bold text-navy">$150 per axle</span>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- 8. Brakes -->
+                <details class="group bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                    <summary class="w-full p-5 flex justify-between items-center hover:bg-slate-50 transition cursor-pointer list-none">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-navy text-white flex items-center justify-center font-bold">8</div>
+                            <h3 class="font-bold text-lg text-navy">Brakes</h3>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300 group-open:rotate-180"></i>
+                    </summary>
+                    <div class="border-t border-slate-100 bg-slate-50/50 p-5 grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                        <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
+                            <span class="font-medium text-slate-700">Front Brakes</span>
+                            <span class="font-bold text-navy">$200 (pads) | $450 (pads & rotors)</span>
+                        </div>
+                        <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
+                            <span class="font-medium text-slate-700">Rear Brakes</span>
+                            <span class="font-bold text-navy">$200 (pads) | $450 (pads & rotors)</span>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- 9. Engine Lights? -->
+                <details class="group bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                    <summary class="w-full p-5 flex justify-between items-center hover:bg-slate-50 transition cursor-pointer list-none">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-navy text-white flex items-center justify-center font-bold">9</div>
+                            <h3 class="font-bold text-lg text-navy">Engine Lights?</h3>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300 group-open:rotate-180"></i>
+                    </summary>
+                    <div class="border-t border-slate-100 bg-slate-50/50 p-5">
+                        <div class="bg-white p-4 rounded-lg border border-slate-200 flex justify-between items-center">
+                            <div>
+                                <h4 class="font-bold text-navy">Diagnostic Scan</h4>
+                                <p class="text-xs text-slate-500">Engine light issues cannot be accurately priced until diagnosed via scan.</p>
+                            </div>
+                            <span class="font-black text-navy text-xl">$55</span>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- 10. Cambelts & Drivebelts -->
+                <details class="group bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                    <summary class="w-full p-5 flex justify-between items-center hover:bg-slate-50 transition cursor-pointer list-none">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-navy text-white flex items-center justify-center font-bold">10</div>
+                            <h3 class="font-bold text-lg text-navy">Cambelts & Drivebelts</h3>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300 group-open:rotate-180"></i>
+                    </summary>
+                    <div class="border-t border-slate-100 bg-slate-50/50 p-5 grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                        <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
+                            <span class="font-medium text-slate-700">Cambelt Replacement (Average)</span>
+                            <span class="font-bold text-navy">$800</span>
+                        </div>
+                        <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
+                            <span class="font-medium text-slate-700">Drivebelt Replacement (Average)</span>
+                            <span class="font-bold text-navy">$150</span>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- 11. Engine Replacement -->
+                <details class="group bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                    <summary class="w-full p-5 flex justify-between items-center hover:bg-slate-50 transition cursor-pointer list-none">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-navy text-white flex items-center justify-center font-bold">11</div>
+                            <h3 class="font-bold text-lg text-navy">Engine Replacement</h3>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300 group-open:rotate-180"></i>
+                    </summary>
+                    <div class="border-t border-slate-100 bg-slate-50/50 p-5">
+                        <div class="bg-white p-4 rounded-lg border border-slate-200 flex justify-between items-center">
+                            <div>
+                                <h4 class="font-bold text-navy">Complete Engine Replacement</h4>
+                                <p class="text-xs text-slate-500">Requires inspection and individual quote based on specific vehicle model.</p>
+                            </div>
+                            <span class="font-black text-navy text-lg">From $4,000</span>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- 12. Transmission -->
+                <details class="group bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                    <summary class="w-full p-5 flex justify-between items-center hover:bg-slate-50 transition cursor-pointer list-none">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-navy text-white flex items-center justify-center font-bold">12</div>
+                            <h3 class="font-bold text-lg text-navy">Transmission</h3>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300 group-open:rotate-180"></i>
+                    </summary>
+                    <div class="border-t border-slate-100 bg-slate-50/50 p-5 grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                        <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
+                            <span class="font-medium text-slate-700">Transmission Servicing</span>
+                            <span class="font-bold text-navy">Approx. $350</span>
+                        </div>
+                        <div class="bg-white p-3.5 rounded-lg border border-slate-200 flex justify-between items-center">
+                            <span class="font-medium text-slate-700">Transmission Replacement</span>
+                            <span class="font-bold text-navy">Quote on request</span>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- 13. Clutch -->
+                <details class="group bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                    <summary class="w-full p-5 flex justify-between items-center hover:bg-slate-50 transition cursor-pointer list-none">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-navy text-white flex items-center justify-center font-bold">13</div>
+                            <h3 class="font-bold text-lg text-navy">Clutch</h3>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300 group-open:rotate-180"></i>
+                    </summary>
+                    <div class="border-t border-slate-100 bg-slate-50/50 p-5">
+                        <div class="bg-white p-4 rounded-lg border border-slate-200 flex justify-between items-center text-sm">
+                            <span class="font-bold text-slate-800">Clutch Replacement</span>
+                            <span class="font-black text-navy text-lg">$900</span>
+                        </div>
+                    </div>
+                </details>
 
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+
+    <!-- =================================================================
+         5. ABOUT US SECTION
+         ================================================================= -->
     <section id="about" class="py-16 bg-white border-y border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
-                <!-- Workshop Image -->
+                <!-- Workshop Map Image (Clickable link to Google Maps) -->
                 <div class="lg:col-span-6 relative">
-                    <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-100 relative group">
-                        <img src="https://raw.githubusercontent.com/swiftymechanics/swiftymechanics/refs/heads/main/googlemapswift.jpg" alt="Swift & Sons Workshop" class="w-full h-80 sm:h-96 object-cover transition duration-500 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0b2341/ffffff?text=Swift+%26+Sons+Workshop';">
+                    <a href="https://maps.app.goo.gl/AQqf6zKhAg7ZU1eL8" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="block rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-100 relative group cursor-pointer"
+                       title="Click to open location in Google Maps">
+                        <img src="https://raw.githubusercontent.com/swiftymechanics/swiftymechanics/refs/heads/main/googlemapswift.jpg" 
+                             alt="Swift & Sons Workshop Location Map" 
+                             class="w-full h-80 sm:h-96 object-cover transition duration-500 group-hover:scale-105" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/0b2341/ffffff?text=Swift+%26+Sons+Workshop';">
                         <div class="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent"></div>
+                        <div class="absolute top-4 right-4 bg-navy/90 text-white text-xs font-semibold px-3 py-1.5 rounded-full border border-sky-400/40 flex items-center gap-1.5 shadow-md group-hover:bg-royal transition">
+                            <i class="fa-solid fa-map-location-dot text-sky-300"></i> View on Google Maps
+                        </div>
                         <div class="absolute bottom-4 left-4 right-4 text-white p-2">
                             <span class="text-xs uppercase font-bold tracking-wider text-sky-400">Wigram Workshop</span>
                             <p class="text-sm font-semibold">Fully equipped clean diagnostic bay & hoist facilities</p>
                         </div>
-                    </div>
+                    </a>
                 </div>
 
-                <!-- About Narrative -->
+                <!-- About Text & Feature Icons -->
                 <div class="lg:col-span-6 space-y-5">
                     <span class="text-royal font-bold text-xs uppercase tracking-widest bg-royal-light px-3.5 py-1.5 rounded-full border border-sky-200">About Swift & Sons</span>
                     <h2 class="text-3xl font-extrabold text-navy">Built on Trust, Experience, and Quality</h2>
@@ -617,22 +647,48 @@
                         At Swift & Sons Auto Repairs, we believe going to the mechanic shouldn't be stressful or confusing. Founded with a commitment to straightforward advice, we provide clear explanations and guaranteed prices before any work begins.
                     </p>
                     
-                    <ul class="space-y-3 pt-2 text-sm text-slate-700">
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-circle-check text-royal text-lg"></i>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2 text-sm text-slate-700">
+                        <li class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-royal-light text-royal flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-wrench text-sm"></i>
+                            </div>
                             <span>Over 20 years of hands-on mechanical industry expertise</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-circle-check text-royal text-lg"></i>
+                        <li class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-royal-light text-royal flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-car-side text-sm"></i>
+                            </div>
                             <span>Loan cars available so your day stays on schedule</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-circle-check text-royal text-lg"></i>
-                            <span>No appointment required — pop in anytime for quick quotes & scans</span>
+                        <li class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-royal-light text-royal flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-bolt text-sm"></i>
+                            </div>
+                            <span>No appointment required, pop in anytime for quick quotes & scans</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-circle-check text-royal text-lg"></i>
+                        <li class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-royal-light text-royal flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-credit-card text-sm"></i>
+                            </div>
                             <span>Flexible payment options with Afterpay coming soon</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-royal-light text-royal flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-mug-hot text-sm"></i>
+                            </div>
+                            <span>Access to free coffee while you wait</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-royal-light text-royal flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-wifi text-sm"></i>
+                            </div>
+                            <span>Free Wi-Fi for customers</span>
+                        </li>
+                        <li class="flex items-start gap-3 sm:col-span-2">
+                            <div class="w-8 h-8 rounded-lg bg-royal-light text-royal flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-child-reaching text-sm"></i>
+                            </div>
+                            <span>Small kids area if waiting with kids</span>
                         </li>
                     </ul>
                 </div>
@@ -641,159 +697,305 @@
         </div>
     </section>
 
-    <!-- Booking & Contact Form Section -->
-<section id="booking" class="py-16 bg-navy text-white relative">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Header -->
-        <div class="text-center space-y-3 mb-8">
-            <span class="text-sky-300 font-bold text-xs uppercase tracking-widest bg-navy-light px-3.5 py-1.5 rounded-full border border-sky-400/40">Get In Touch</span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Book Your Car In or Get a Free Quote</h2>
-            <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto">
-                Reach out directly via text or email, or complete the quick booking form below and we'll be in touch ASAP.
-            </p>
-        </div>
 
-        <!-- Quick Contact Action Cards -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-            <!-- Text / SMS Card -->
-            <a href="sms:0210447812" class="bg-navy-light/80 hover:bg-navy-light border border-sky-900/60 hover:border-sky-400/50 p-4 rounded-xl flex items-center gap-4 transition group shadow-md">
-                <div class="w-12 h-12 rounded-lg bg-sky-500/10 border border-sky-400/20 flex items-center justify-center text-sky-400 group-hover:scale-105 transition-transform shrink-0">
-                    <i class="fa-solid fa-comment-sms text-xl"></i>
-                </div>
-                <div>
-                    <span class="block text-xs uppercase tracking-wider text-slate-400 font-semibold">Text Us</span>
-                    <span class="text-base font-bold text-white group-hover:text-sky-300 transition">021 044 7812</span>
-                </div>
-            </a>
-
-            <!-- Email Card -->
-            <a href="mailto:office@swiftandsons.co.nz" class="bg-navy-light/80 hover:bg-navy-light border border-sky-900/60 hover:border-sky-400/50 p-4 rounded-xl flex items-center gap-4 transition group shadow-md">
-                <div class="w-12 h-12 rounded-lg bg-sky-500/10 border border-sky-400/20 flex items-center justify-center text-sky-400 group-hover:scale-105 transition-transform shrink-0">
-                    <i class="fa-solid fa-envelope text-xl"></i>
-                </div>
-                <div class="min-w-0">
-                    <span class="block text-xs uppercase tracking-wider text-slate-400 font-semibold">Email Us</span>
-                    <span class="text-sm sm:text-base font-bold text-white group-hover:text-sky-300 transition truncate block">office@swiftandsons.co.nz</span>
-                </div>
-            </a>
-        </div>
-
-        <!-- Booking Form Container -->
-        <div class="bg-navy-dark p-6 sm:p-8 rounded-2xl shadow-2xl border border-sky-900/60">
-            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
-                <!-- Web3Forms Key -->
-                <input type="hidden" name="access_key" value="ff84a284-5198-4309-8fd1-0953a1505de9">
-                <input type="hidden" name="subject" value="New Vehicle Enquiry - Swift & Sons">
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Your Name *</label>
-                        <input type="text" name="name" required placeholder="John Smith" class="w-full bg-navy border border-slate-700 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-royal">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Phone Number *</label>
-                        <input type="tel" name="phone" required placeholder="021 123 4567" class="w-full bg-navy border border-slate-700 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-royal">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Vehicle Rego (Number Plate)</label>
-                        <input type="text" name="rego" placeholder="ABC123" class="w-full bg-navy border border-slate-700 rounded-lg p-3 text-sm font-mono uppercase text-white focus:outline-none focus:border-royal">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Car Details (Make & Model)</label>
-                        <input type="text" name="car_details" placeholder="e.g. 2015 Toyota Corolla" class="w-full bg-navy border border-slate-700 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-royal">
-                    </div>
-                </div>
-
-                <div>
-                    <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Service Required / Enquiry </label>
-                    <textarea name="enquiry" rows="4" placeholder="Describe what service, repair, or issue you would like us to look at..." class="w-full bg-navy border border-slate-700 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-royal"></textarea>
-                </div>
-
-                <button type="submit" class="w-full bg-royal hover:bg-royal-hover text-white font-bold py-4 rounded-xl shadow-lg transition flex justify-center items-center gap-2">
-                    <i class="fa-solid fa-paper-plane"></i> Send Booking Request
-                </button>
-            </form>
-        </div>
-    </div>
-</section>
-
-    <!-- Footer -->
-<!-- Footer -->
-<footer class="bg-navy-dark text-slate-400 py-10 border-t border-sky-950 text-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center gap-4 text-center">
-        <!-- Static Logo (Non-clickable, no animations) -->
-        <div>
-            <img src="https://raw.githubusercontent.com/swiftymechanics/swiftymechanics/refs/heads/main/birdnobg.png" 
-                 alt="Swift & Sons Auto Repairs" 
-                 class="h-10 w-auto mx-auto mb-2 object-contain" 
-                 onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/swiftymechanics/swiftymechanics/refs/heads/main/birdnobg.png';">
-            <p class="text-xs text-slate-400">© 2026 Swift & Sons Auto Repairs. All rights reserved.</p>
-        </div>
-
-        <!-- Contact & Business Info -->
-        <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-xs text-slate-300">
-            <span>11E Parkhouse Road, Wigram</span>
-            <span class="hidden sm:inline text-slate-600">•</span>
-            <span>Phone: 03 420 0818</span>
-            <span class="hidden sm:inline text-slate-600">•</span>
-            <span>Mon - Fri: 8:00am - 5:00pm</span>
-        </div>
-    </div>
-</footer>
-
-    <!-- Interactive JavaScript -->
-    <script>
-        // Fuel Type Toggle State
-        let currentFuel = 'petrol';
-
-        const servicePrices = {
-            gold: { petrol: '$300', diesel: '$400' },
-            silver: { petrol: '$250', diesel: '$350' },
-            bronze: { petrol: '$180', diesel: '$220' }
-        };
-
-        function setFuelType(type) {
-            currentFuel = type;
+    <!-- =================================================================
+         6. BOOKING & CONTACT FORM SECTION
+         ================================================================= -->
+    <section id="booking" class="py-16 bg-navy text-white relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             
+            <!-- Section Header -->
+            <div class="text-center space-y-3 mb-8">
+                <span class="text-sky-300 font-bold text-xs uppercase tracking-widest bg-navy-light px-3.5 py-1.5 rounded-full border border-sky-400/40">Get In Touch</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Book Your Car In or Get a Free Quote</h2>
+                <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto">
+                    Reach out directly via text or email, or complete the quick booking form below and we'll be in touch ASAP.
+                </p>
+            </div>
+
+            <!-- Quick Contact Buttons (SMS & Email) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                <!-- Text / SMS Card -->
+                <a href="sms:0210447812" class="bg-navy-light/80 hover:bg-navy-light border border-sky-900/60 hover:border-sky-400/50 p-4 rounded-xl flex items-center gap-4 transition group shadow-md">
+                    <div class="w-12 h-12 rounded-lg bg-sky-500/10 border border-sky-400/20 flex items-center justify-center text-sky-400 group-hover:scale-105 transition-transform shrink-0">
+                        <i class="fa-solid fa-comment-sms text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="block text-xs uppercase tracking-wider text-slate-400 font-semibold">Text Us</span>
+                        <span class="text-base font-bold text-white group-hover:text-sky-300 transition">021 044 7812</span>
+                    </div>
+                </a>
+
+                <!-- Email Card -->
+                <a href="mailto:office@swiftandsons.co.nz" class="bg-navy-light/80 hover:bg-navy-light border border-sky-900/60 hover:border-sky-400/50 p-4 rounded-xl flex items-center gap-4 transition group shadow-md">
+                    <div class="w-12 h-12 rounded-lg bg-sky-500/10 border border-sky-400/20 flex items-center justify-center text-sky-400 group-hover:scale-105 transition-transform shrink-0">
+                        <i class="fa-solid fa-envelope text-xl"></i>
+                    </div>
+                    <div class="min-w-0">
+                        <span class="block text-xs uppercase tracking-wider text-slate-400 font-semibold">Email Us</span>
+                        <span class="text-sm sm:text-base font-bold text-white group-hover:text-sky-300 transition truncate block">office@swiftandsons.co.nz</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Booking Form & In-Page Confirmation Box -->
+            <div class="bg-navy-dark p-6 sm:p-8 rounded-2xl shadow-2xl border border-sky-900/60">
+                
+                <!-- In-Page Confirmation Message (Hidden until form is submitted) -->
+                <div id="form-success-message" class="hidden text-center py-8 space-y-4">
+                    <div class="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-400 flex items-center justify-center mx-auto text-3xl">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <h3 class="text-2xl font-extrabold text-white">Enquiry Sent!</h3>
+                    <p class="text-slate-300 text-sm max-w-md mx-auto">
+                        Thanks for getting in touch with Swift & Sons. We have received your details and will get back to you via your preferred contact method ASAP.
+                    </p>
+                    <button type="button" onclick="resetBookingForm()" class="mt-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-sky-400 hover:text-sky-300 bg-navy px-4 py-2.5 rounded-lg border border-sky-400/30 transition">
+                        <i class="fa-solid fa-rotate-left"></i> Send Another Enquiry
+                    </button>
+                </div>
+
+                <!-- Error Banner (Hidden unless there is a network problem) -->
+                <div id="form-error-message" class="hidden mb-4 p-4 rounded-xl bg-red-500/20 border border-red-400/40 text-red-200 text-sm text-center">
+                    Something went wrong sending your request. Please try again or text us on 021 044 7812.
+                </div>
+
+                <form id="booking-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+                    <!-- Web3Forms Configuration -->
+                    <input type="hidden" name="access_key" value="ff84a284-5198-4309-8fd1-0953a1505de9">
+                    <input type="hidden" id="form-subject" name="subject" value="New Vehicle Enquiry - Swift & Sons">
+                    <input type="hidden" id="form-from-name" name="from_name" value="Swift & Sons Website">
+                    <input type="hidden" id="form-replyto" name="replyto" value="">
+                    <input type="hidden" id="form-clean-reply-link" name="Direct_Reply_Link_(Blank_Email)" value="">
+
+                    <!-- Honeypot Spam Protection (Hidden from real users, traps autofill bots) -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;" tabindex="-1" autocomplete="off">
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Your Name *</label>
+                            <input type="text" name="name" required placeholder="John Smith" class="w-full bg-navy border border-slate-700 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-royal">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Phone Number *</label>
+                            <input type="tel" name="phone" required placeholder="021 123 4567" class="w-full bg-navy border border-slate-700 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-royal">
+                        </div>
+                    </div>
+
+                    <!-- Preferred Contact Method -->
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Preferred Contact Method *</label>
+                        <div class="grid grid-cols-3 gap-3">
+                            <label class="cursor-pointer">
+                                <input type="radio" name="preferred_contact" value="SMS" checked onchange="toggleEmailField()" class="peer sr-only">
+                                <div class="p-3 rounded-lg bg-navy border border-slate-700 text-center text-sm font-semibold text-slate-300 peer-checked:bg-royal peer-checked:border-royal peer-checked:text-white transition flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-comment-sms"></i> SMS/TXT
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="preferred_contact" value="Phone" onchange="toggleEmailField()" class="peer sr-only">
+                                <div class="p-3 rounded-lg bg-navy border border-slate-700 text-center text-sm font-semibold text-slate-300 peer-checked:bg-royal peer-checked:border-royal peer-checked:text-white transition flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-phone"></i> Phone
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="preferred_contact" value="Email" onchange="toggleEmailField()" class="peer sr-only">
+                                <div class="p-3 rounded-lg bg-navy border border-slate-700 text-center text-sm font-semibold text-slate-300 peer-checked:bg-royal peer-checked:border-royal peer-checked:text-white transition flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-envelope"></i> Email
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Conditional Email Field (Hidden unless 'Email' is selected) -->
+                    <div id="email-field-container" class="hidden">
+                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Your Email Address *</label>
+                        <input type="email" id="customer-email" name="email" placeholder="you@example.com" class="w-full bg-navy border border-slate-700 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-royal">
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Vehicle Rego (Number Plate)</label>
+                            <input type="text" name="rego" placeholder="ABC123" class="w-full bg-navy border border-slate-700 rounded-lg p-3 text-sm font-mono uppercase text-white focus:outline-none focus:border-royal">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Car Details (Make & Model)</label>
+                            <input type="text" name="car_details" placeholder="e.g. 2015 Toyota Corolla" class="w-full bg-navy border border-slate-700 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-royal">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Service Required / Enquiry </label>
+                        <textarea name="enquiry" rows="4" placeholder="Describe what service, repair, or issue you would like us to look at..." class="w-full bg-navy border border-slate-700 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-royal"></textarea>
+                    </div>
+
+                    <button id="submit-btn" type="submit" class="w-full bg-royal hover:bg-royal-hover text-white font-bold py-4 rounded-xl shadow-lg transition flex justify-center items-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> <span id="submit-btn-text">Send Booking Request</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =================================================================
+         7. FOOTER SECTION
+         ================================================================= -->
+    <footer class="bg-navy-dark text-slate-400 py-10 border-t border-sky-950 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center gap-4 text-center">
+            <div>
+                <img src="https://raw.githubusercontent.com/swiftymechanics/swiftymechanics/refs/heads/main/birdnobg.png" 
+                     alt="Swift & Sons Auto Repairs" 
+                     class="h-10 w-auto mx-auto mb-2 object-contain">
+                <p class="text-xs text-slate-400">© 2026 Swift & Sons Auto Repairs. All rights reserved.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-xs text-slate-300">
+                <span>11E Parkhouse Road, Wigram</span>
+                <span class="hidden sm:inline text-slate-600">•</span>
+                <span>Phone: 03 420 0818</span>
+                <span class="hidden sm:inline text-slate-600">•</span>
+                <span>Mon - Fri: 8:00am - 5:00pm</span>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- =================================================================
+         8. SCRIPTS (FUEL TOGGLE & WEBFORM LOGIC)
+         ================================================================= -->
+    <script>
+        // 1. Fuel Type Toggle (Petrol vs Diesel)
+        function setFuelType(type) {
             const btnPetrol = document.getElementById('btn-petrol');
             const btnDiesel = document.getElementById('btn-diesel');
 
+            const activeStyle = "flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm text-white shadow-sm transition-all duration-200 ";
+            const inactiveStyle = "flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm text-slate-600 hover:text-navy transition-all duration-200";
+
             if (type === 'petrol') {
-                btnPetrol.className = "pump-badge flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm bg-royal text-white shadow-sm transition";
-                btnDiesel.className = "pump-badge flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm text-slate-600 hover:text-navy transition";
+                btnPetrol.className = activeStyle + "bg-royal";
+                btnDiesel.className = inactiveStyle;
             } else {
-                btnDiesel.className = "pump-badge flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm bg-navy text-white shadow-sm transition";
-                btnPetrol.className = "pump-badge flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm text-slate-600 hover:text-navy transition";
+                btnDiesel.className = activeStyle + "bg-navy";
+                btnPetrol.className = inactiveStyle;
             }
 
-            // Update DOM prices
-            document.getElementById('price-gold').textContent = servicePrices.gold[type];
-            document.getElementById('price-silver').textContent = servicePrices.silver[type];
-            document.getElementById('price-bronze').textContent = servicePrices.bronze[type];
+            document.querySelectorAll('[data-petrol]').forEach(priceElement => {
+                priceElement.textContent = priceElement.getAttribute('data-' + type);
+            });
         }
 
-        // Accordion Toggle
-        function toggleAccordion(id) {
-            const content = document.getElementById(id);
-            const icon = document.getElementById('icon-' + id);
+        // 2. Show/Hide Email Field Based on Preferred Contact Method
+        function toggleEmailField() {
+            const selectedMethod = document.querySelector('input[name="preferred_contact"]:checked').value;
+            const emailContainer = document.getElementById('email-field-container');
+            const emailInput = document.getElementById('customer-email');
 
-            if (content.classList.contains('active')) {
-                content.classList.remove('active');
-                if (icon) icon.style.transform = 'rotate(0deg)';
+            if (selectedMethod === 'Email') {
+                emailContainer.classList.remove('hidden');
+                emailInput.required = true;
             } else {
-                content.classList.add('active');
-                if (icon) icon.style.transform = 'rotate(180deg)';
+                emailContainer.classList.add('hidden');
+                emailInput.required = false;
+                emailInput.value = ''; // Clear email if they switch back to SMS or Phone
             }
         }
 
-        // Automatically expand WOF Failures and Servicing by default
-        window.addEventListener('DOMContentLoaded', () => {
-            toggleAccordion('acc-1');
-            toggleAccordion('acc-3');
+        // 3. Reset Form to Send Another Enquiry
+        function resetBookingForm() {
+            const form = document.getElementById('booking-form');
+            const successBox = document.getElementById('form-success-message');
+            const errorBox = document.getElementById('form-error-message');
+            
+            form.reset();
+            toggleEmailField();
+            successBox.classList.add('hidden');
+            errorBox.classList.add('hidden');
+            form.classList.remove('hidden');
+        }
+
+// 4. Configure Email Headers & Submit Form In-Page
+        document.getElementById('booking-form').addEventListener('submit', async function(event) {
+            event.preventDefault(); // Prevents redirecting away from the page
+
+            const form = event.target;
+            const selectedMethod = document.querySelector('input[name="preferred_contact"]:checked').value;
+            const emailInput = document.getElementById('customer-email');
+            const subjectInput = document.getElementById('form-subject');
+            const fromNameInput = document.getElementById('form-from-name');
+            const replyToInput = document.getElementById('form-replyto');
+            const cleanReplyLinkInput = document.getElementById('form-clean-reply-link');
+            const submitBtn = document.getElementById('submit-btn');
+            const submitBtnText = document.getElementById('submit-btn-text');
+            const successBox = document.getElementById('form-success-message');
+            const errorBox = document.getElementById('form-error-message');
+
+            // Grab customer inputs for the subject line
+            const customerName = form.elements['name']?.value.trim() || 'Customer';
+            const carDetails = form.elements['car_details']?.value.trim() || '';
+            const rego = form.elements['rego']?.value.trim().toUpperCase() || '';
+            const customerEmail = emailInput.value.trim();
+
+            // Build a clean vehicle string (e.g., "Toyota Corolla (ABC123)", "Toyota Corolla", or "ABC123")
+            let vehicleInfo = '';
+            if (carDetails && rego) {
+                vehicleInfo = ` - ${carDetails} (${rego})`;
+            } else if (carDetails) {
+                vehicleInfo = ` - ${carDetails}`;
+            } else if (rego) {
+                vehicleInfo = ` - (${rego})`;
+            }
+
+            // Option 1 Subject Lines
+            if (selectedMethod === 'SMS') {
+                replyToInput.value = '';
+                subjectInput.value = `[REPLY VIA TEXT] ${customerName}${vehicleInfo}`;
+                fromNameInput.value = `Swift & Sons (Reply via Text)`;
+                cleanReplyLinkInput.value = '';
+                cleanReplyLinkInput.disabled = true;
+            } else if (selectedMethod === 'Phone') {
+                replyToInput.value = '';
+                subjectInput.value = `[CALL REQUIRED - NO EMAIL] ${customerName}${vehicleInfo}`;
+                fromNameInput.value = `Swift & Sons (Call Required)`;
+                cleanReplyLinkInput.value = '';
+                cleanReplyLinkInput.disabled = true;
+            } else {
+                // Email selected
+                replyToInput.value = customerEmail;
+                subjectInput.value = `[EMAIL ENQUIRY] ${customerName}${vehicleInfo}`;
+                fromNameInput.value = `Swift & Sons Booking Form`;
+                cleanReplyLinkInput.disabled = false;
+                cleanReplyLinkInput.value = `mailto:${customerEmail}?subject=Re:%20Your%20Vehicle%20Enquiry%20-%20Swift%20%26%20Sons`;
+            }
+
+            // Show loading state on button
+            errorBox.classList.add('hidden');
+            submitBtn.disabled = true;
+            submitBtnText.textContent = 'Sending...';
+
+            try {
+                const formData = new FormData(form);
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+
+                if (result.success) {
+                    form.classList.add('hidden');
+                    successBox.classList.remove('hidden');
+                } else {
+                    errorBox.classList.remove('hidden');
+                }
+            } catch (error) {
+                errorBox.classList.remove('hidden');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtnText.textContent = 'Send Booking Request';
+            }
         });
     </script>
+
 </body>
 </html>
