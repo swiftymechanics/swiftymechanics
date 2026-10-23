@@ -3,18 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swift & Sons Auto Repairs</title>
     
+    <!-- =================================================================
+         PAGE TITLE & LOCAL SEO META TAGS (Hidden from page, read by Google)
+         HOW TO EDIT: Change the text inside content="..." if you want to
+         adjust how your website appears on Google Search results.
+         ================================================================= -->
+    <title>Swift & Sons Auto Repairs | Mechanic in Wigram, Christchurch</title>
+    <meta name="description" content="Trusted local mechanic at 11E Parkhouse Road, Wigram, Christchurch. Fixed upfront pricing, vehicle servicing, WOF repairs, brakes, tyres, diagnostics & loan cars. Serving Wigram, Sockburn, Hornby, Middleton & Riccarton.">
+    <meta name="keywords" content="mechanic Wigram, auto repairs Wigram, car servicing Wigram, mechanic near me, Parkhouse Road mechanic, Christchurch mechanic, WOF repairs Wigram, mechanic Sockburn, mechanic Hornby, mechanic Middleton, mechanic Halswell, mechanic Riccarton, brake repairs Wigram, car tyres Wigram, pre purchase inspection Christchurch, Swift and Sons Auto Repairs">
+    <meta name="author" content="Swift & Sons Auto Repairs">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://swiftandsons.co.nz">
+
+    <!-- Local Geographic Meta Tags (Helps local search engines pinpoint your workshop in Wigram) -->
+    <meta name="geo.region" content="NZ-CAN">
+    <meta name="geo.placename" content="Wigram, Christchurch">
+    <meta name="geo.position" content="-43.5414;172.5694">
+    <meta name="ICBM" content="-43.5414, 172.5694">
+
     <!-- Open Graph / Facebook Social Preview Meta Tags -->
-    <meta property="og:title" content="Swift & Sons Auto Repairs">
-    <meta property="og:description" content="Professional auto repair workshop in Christchurch. Bringing Transparency to the Trade">
+    <meta property="og:title" content="Swift & Sons Auto Repairs | Wigram Mechanic">
+    <meta property="og:description" content="Professional auto repair workshop in Wigram, Christchurch. Bringing Transparency to the Trade with upfront pricing.">
     <meta property="og:image" content="https://raw.githubusercontent.com/swiftymechanics/swiftymechanics/refs/heads/main/OGSwiftnSonsThis.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="628">
     <meta property="og:url" content="https://swiftandsons.co.nz">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_NZ">
 
+    <!-- Browser Tab Icon (Favicon) -->
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/swiftymechanics/swiftymechanics/refs/heads/main/birdnobg.ico">
+
+    <!-- =================================================================
+         GOOGLE LOCAL BUSINESS SCHEMA (Invisible code for Google Maps & Search)
+         WHY THIS IS HERE: This tells Google your exact address, suburb,
+         surrounding areas served, phone number, and hours so you rank higher
+         when people in Wigram or nearby search "mechanic near me".
+         ================================================================= -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoRepair",
+      "name": "Swift & Sons Auto Repairs",
+      "image": "https://raw.githubusercontent.com/swiftymechanics/swiftymechanics/refs/heads/main/OGSwiftnSonsThis.jpg",
+      "url": "https://swiftandsons.co.nz",
+      "telephone": "+6434200818",
+      "email": "office@swiftandsons.co.nz",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "11E Parkhouse Road, Wigram",
+        "addressLocality": "Christchurch",
+        "addressRegion": "Canterbury",
+        "postalCode": "8042",
+        "addressCountry": "NZ"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -43.5414,
+        "longitude": 172.5694
+      },
+      "areaServed": [
+        { "@type": "Place", "name": "Wigram" },
+        { "@type": "Place", "name": "Sockburn" },
+        { "@type": "Place", "name": "Hornby" },
+        { "@type": "Place", "name": "Middleton" },
+        { "@type": "Place", "name": "Halswell" },
+        { "@type": "Place", "name": "Riccarton" },
+        { "@type": "Place", "name": "Addington" },
+        { "@type": "Place", "name": "aidanfield" },
+        { "@type": "Place", "name": "Broomfield" },
+        { "@type": "City", "name": "Christchurch" }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:00",
+          "closes": "17:00"
+        }
+      ],
+      "description": "Honest and transparent mechanic workshop in Wigram, Christchurch offering upfront pricing on vehicle servicing, WOF repairs, brakes, suspension, tyres, cambelts, and diagnostics."
+    }
+    </script>
     
     <!-- Tailwind CSS (Handles layout and styling) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -27,7 +105,11 @@
     <!-- FontAwesome (Icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Custom Brand Colours -->
+    <!-- =================================================================
+         BRAND COLOURS CONFIGURATION
+         HOW TO EDIT: Change the hex colour codes (e.g. #0b2341) below if you
+         ever want to tweak your dark navy or royal blue brand colours.
+         ================================================================= -->
     <script>
         tailwind.config = {
             theme: {
@@ -63,69 +145,50 @@
 <body class="font-sans antialiased text-slate-800 bg-slate-50 min-h-screen flex flex-col">
 
     <!-- =================================================================
-         1. TOP CONTACT BAR (Clean & Uncrowded)
+         1. TOP CONTACT BAR (Centered in the header)
+         HOW TO EDIT:
+         - To change your address, edit the text inside <span>11E Parkhouse Road, Wigram</span>
+         - To change your phone number, update both href="tel:034200818" and <span>03 420 0818</span>
+         - To change your opening hours, edit <span>Mon-Fri: 8am - 5pm</span>
          ================================================================= -->
-    <header class="bg-navy text-white text-xs sm:text-sm py-2 px-4 border-b border-royal/30">
-        <div class="max-w-7xl mx-auto flex flex-wrap justify-center sm:justify-between items-center gap-3 text-slate-200">
+    <header class="bg-navy text-white text-xs sm:text-sm py-2.5 px-4 border-b border-royal/30">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-center items-center gap-3 sm:gap-6 text-slate-200">
             
-            <!-- Contact Details -->
-            <div class="flex flex-wrap justify-center sm:justify-start items-center gap-3 sm:gap-4">
-                
-                <!-- Clickable Google Maps Address -->
-                <a href="https://www.google.com/maps/search/?api=1&query=11E+Parkhouse+Road,+Wigram,+Christchurch" 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   class="flex items-center gap-1.5 hover:text-sky-300 transition" 
-                   title="Open in Google Maps">
-                    <i class="fa-solid fa-location-dot text-sky-400"></i>
-                    <span>11E Parkhouse Road, Wigram</span>
-                </a>
+            <!-- Clickable Google Maps Address -->
+            <a href="https://www.google.com/maps/search/?api=1&query=11E+Parkhouse+Road,+Wigram,+Christchurch" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="flex items-center gap-1.5 hover:text-sky-300 transition" 
+               title="Open in Google Maps">
+                <i class="fa-solid fa-location-dot text-sky-400"></i>
+                <span>11E Parkhouse Road, Wigram</span>
+            </a>
 
-                <span class="hidden md:inline text-slate-500">•</span>
+            <span class="hidden sm:inline text-slate-500">•</span>
 
-                <!-- Phone -->
-                <a href="tel:034200818" class="flex items-center gap-1.5 hover:text-sky-300 transition">
-                    <i class="fa-solid fa-phone text-sky-400"></i>
-                    <span>03 420 0818</span>
-                </a>
+            <!-- Phone Number -->
+            <a href="tel:034200818" class="flex items-center gap-1.5 hover:text-sky-300 transition">
+                <i class="fa-solid fa-phone text-sky-400"></i>
+                <span>03 420 0818</span>
+            </a>
 
-                <span class="hidden md:inline text-slate-500">•</span>
+            <span class="hidden sm:inline text-slate-500">•</span>
 
-                <!-- Hours -->
-                <span class="flex items-center gap-1.5 text-slate-200">
-                    <i class="fa-regular fa-clock text-sky-400"></i>
-                    <span>Mon-Fri: 8am - 5pm</span>
-                </span>
-            </div>
+            <!-- Opening Hours -->
+            <span class="flex items-center gap-1.5 text-slate-200">
+                <i class="fa-regular fa-clock text-sky-400"></i>
+                <span>Mon-Fri: 8am - 5pm</span>
+            </span>
 
-            <!-- Short Pill Badge on the Right -->
-            <div class="inline-flex items-center gap-1.5 text-xs font-semibold text-sky-300 bg-navy-light px-3 py-0.5 rounded-full border border-sky-400/40">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>Soft Launch Phase</span>
-            </div>
         </div>
     </header>
 
-    <!-- =================================================================
-         2. SOFT LAUNCH ANNOUNCEMENT BANNER
-         (Easy to remove once you pass October 26th)
-         ================================================================= -->
-    <div class="bg-gradient-to-r from-sky-950 via-navy to-sky-950 text-sky-100 text-xs sm:text-sm py-2 px-4 border-b border-sky-500/30 text-center shadow-inner">
-        <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2">
-            <span class="inline-flex items-center gap-1 font-bold text-sky-300 uppercase tracking-wide text-[11px] bg-sky-900/60 px-2 py-0.5 rounded">
-                <i class="fa-solid fa-wrench text-sky-400"></i> Opening Soon
-            </span>
-            <p class="text-slate-200">
-                Official opening is <strong>October 26th</strong>, but our workshop is operational and taking early bookings by appointment!
-            </p>
-            <a href="tel:034200818" class="underline hover:text-white font-semibold ml-1 whitespace-nowrap">
-                Call to book &rarr;
-            </a>
-        </div>
-    </div>
 
     <!-- =================================================================
-         2. MAIN NAVIGATION BAR
+         2. MAIN NAVIGATION BAR (Logo & Menu Links)
+         HOW TO EDIT:
+         - The logo image link is inside the <img src="..."> tag.
+         - The menu links jump to sections further down the page (#services-pricing, #about, #booking).
          ================================================================= -->
     <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
@@ -133,7 +196,7 @@
             <!-- Brand Logo -->
             <a href="#" class="flex items-center gap-3 group">
                 <img src="https://raw.githubusercontent.com/swiftymechanics/swiftymechanics/684e09e1ebb10bd35fc425d39a5f0b68203854a4/SwiftSonsFullLogoNOBorder.svg"
-                     alt="Swift & Sons Auto Repairs Logo" 
+                     alt="Swift & Sons Auto Repairs - Wigram Mechanic Logo" 
                      class="h-16 sm:h-20 w-auto object-contain transition group-hover:scale-105">
             </a>
 
@@ -153,7 +216,11 @@
 
 
     <!-- =================================================================
-         3. HERO SECTION (Top Banner & Quote)
+         3. HERO SECTION (Top Banner, Owner Quote & 3 Feature Cards)
+         HOW TO EDIT:
+         - Main title is inside <h1>...</h1>
+         - John Swift's quote is inside <blockquote>...</blockquote>
+         - The 3 feature boxes (Loan Cars, Free Quotes, No Appointment) are inside id="highlights"
          ================================================================= -->
     <section class="relative bg-gradient-to-b from-navy via-navy to-navy-dark text-white py-16 lg:py-24 overflow-hidden">
         <!-- Background Decorative Glows -->
@@ -233,11 +300,14 @@
 
     <!-- =================================================================
          4. PRICING & SERVICES SECTION
-         HOW TO EDIT DROPDOWNS:
-         - Each dropdown is wrapped in a <details> tag.
-         - If you want a dropdown to be OPEN automatically when the page loads,
-           just add the word "open" inside <details open class="...">.
-         - To make it start CLOSED, remove the word "open".
+         HOW TO EDIT PRICES OR DROPDOWNS:
+         - Each category is inside a <details> block.
+         - Add the word "open" to <details open class="..."> if you want that
+           category to start expanded when someone visits the website.
+         - To change a normal price, simply change the dollar amount inside the <span>$XXX</span>.
+         - IMPORTANT FOR SERVICING (Section 3): Because Servicing changes when someone
+           clicks Petrol vs Diesel, make sure you update BOTH data-petrol="$XXX" and
+           data-diesel="$XXX" on the Gold, Silver, and Bronze service lines!
          ================================================================= -->
     <section id="services-pricing" class="py-16 bg-slate-50">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -371,7 +441,7 @@
                     </summary>
                     <div class="border-t border-slate-100 bg-white p-5 space-y-4">
                         
-                        <!-- Gold Service -->
+                        <!-- Gold Service (Edit data-petrol and data-diesel to change prices) -->
                         <div class="p-4 rounded-xl border border-sky-200 bg-sky-50/40 space-y-2">
                             <div class="flex justify-between items-center">
                                 <h4 class="font-extrabold text-navy flex items-center gap-2">
@@ -384,7 +454,7 @@
                             </p>
                         </div>
 
-                        <!-- Silver Service -->
+                        <!-- Silver Service (Edit data-petrol and data-diesel to change prices) -->
                         <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/60 space-y-2">
                             <div class="flex justify-between items-center">
                                 <h4 class="font-extrabold text-slate-800 flex items-center gap-2">
@@ -397,7 +467,7 @@
                             </p>
                         </div>
 
-                        <!-- Bronze Service -->
+                        <!-- Bronze Service (Edit data-petrol and data-diesel to change prices) -->
                         <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/30 space-y-2">
                             <div class="flex justify-between items-center">
                                 <h4 class="font-extrabold text-slate-800 flex items-center gap-2">
@@ -413,7 +483,7 @@
                     </div>
                 </details>
 
-                <!-- 4. Warrant of Fitness (WOF) Bundle (Moved to 4th position) -->
+                <!-- 4. Warrant of Fitness (WOF) Bundle -->
                 <details class="group bg-white rounded-xl shadow-md border-2 border-royal overflow-hidden">
                     <summary class="w-full p-5 flex justify-between items-center bg-royal-light/50 hover:bg-royal-light transition cursor-pointer list-none">
                         <div class="flex items-center gap-3">
@@ -437,7 +507,7 @@
                     </div>
                 </details>
 
-                <!-- 5. Pre-Purchase Inspection (PPI) (Moved to 5th position) -->
+                <!-- 5. Pre-Purchase Inspection (PPI) -->
                 <details class="group bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
                     <summary class="w-full p-5 flex justify-between items-center hover:bg-slate-50 transition cursor-pointer list-none">
                         <div class="flex items-center gap-3">
@@ -645,7 +715,10 @@
 
 
     <!-- =================================================================
-         5. ABOUT US SECTION
+         5. ABOUT US SECTION (Map Image & Workshop Perks)
+         HOW TO EDIT:
+         - Each bullet point on the right is a <li>...</li> block.
+         - You can change the text inside the <span>...</span> tags.
          ================================================================= -->
     <section id="about" class="py-16 bg-white border-y border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -659,7 +732,7 @@
                        class="block rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-100 relative group cursor-pointer"
                        title="Click to open location in Google Maps">
                         <img src="https://raw.githubusercontent.com/swiftymechanics/swiftymechanics/refs/heads/main/googlemapswift.jpg" 
-                             alt="Swift & Sons Workshop Location Map" 
+                             alt="Swift & Sons Workshop Location Map - 11E Parkhouse Road, Wigram" 
                              class="w-full h-80 sm:h-96 object-cover transition duration-500 group-hover:scale-105" 
                              onerror="this.onerror=null; this.src='https://placehold.co/600x400/0b2341/ffffff?text=Swift+%26+Sons+Workshop';">
                         <div class="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent"></div>
@@ -668,7 +741,7 @@
                         </div>
                         <div class="absolute bottom-4 left-4 right-4 text-white p-2">
                             <span class="text-xs uppercase font-bold tracking-wider text-sky-400">Wigram Workshop</span>
-                            <p class="text-sm font-semibold">Fully equipped clean diagnostic bay & hoist facilities</p>
+                            <p class="text-sm font-semibold">11E Parkhouse Road — Conveniently located for Wigram, Sockburn, Hornby & Middleton</p>
                         </div>
                     </a>
                 </div>
@@ -676,9 +749,9 @@
                 <!-- About Text & Feature Icons -->
                 <div class="lg:col-span-6 space-y-5">
                     <span class="text-royal font-bold text-xs uppercase tracking-widest bg-royal-light px-3.5 py-1.5 rounded-full border border-sky-200">About Swift & Sons</span>
-                    <h2 class="text-3xl font-extrabold text-navy">Built on Trust, Experience, and Quality</h2>
+                    <h2 class="text-3xl font-extrabold text-navy">Your Local Wigram Mechanics Built on Trust & Quality</h2>
                     <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                        At Swift & Sons Auto Repairs, we believe going to the mechanic shouldn't be stressful or confusing. Founded with a commitment to straightforward advice, we provide clear explanations and guaranteed prices before any work begins.
+                        Located at 11E Parkhouse Road in Wigram, Swift & Sons Auto Repairs believes going to the mechanic shouldn't be stressful or confusing. Founded with a commitment to straightforward advice, we provide clear explanations and upfront prices before any work begins.
                     </p>
                     
                     <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2 text-sm text-slate-700">
@@ -732,8 +805,13 @@
     </section>
 
 
-<!-- =================================================================
-         6. BOOKING & CONTACT FORM SECTION
+    <!-- =================================================================
+         6. BOOKING & CONTACT FORM SECTION (Web3Forms)
+         HOW TO EDIT:
+         - Your Web3Forms Access Key is stored inside:
+           <input type="hidden" name="access_key" value="...">
+         - The logic that builds your custom email subject lines is down in
+           Section 8 (<script>) at the bottom of this file.
          ================================================================= -->
     <section id="booking" class="py-16 bg-navy text-white relative">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -795,16 +873,17 @@
                 </div>
 
                 <form id="booking-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
-                    <!-- Web3Forms Configuration -->
+                    <!-- Web3Forms Hidden Settings (Automatically updated by our script when submitted) -->
                     <input type="hidden" name="access_key" value="ff84a284-5198-4309-8fd1-0953a1505de9">
-                    <input type="hidden" id="form-subject" name="subject" value="New Vehicle Enquiry - Swift & Sons">
+                    <input type="hidden" id="form-subject" name="subject" value="Enquiry: Swift & Sons">
                     <input type="hidden" id="form-from-name" name="from_name" value="Swift & Sons Website">
                     <input type="hidden" id="form-replyto" name="replyto" value="">
-                    <input type="hidden" id="form-clean-reply-link" name="Direct_Reply_Link_(Blank_Email)" value="">
+                    <input type="hidden" id="form-clean-reply-link" name="Tap_To_Contact" value="">
 
                     <!-- Honeypot Spam Protection (Hidden from real users, traps autofill bots) -->
                     <input type="checkbox" name="botcheck" class="hidden" style="display: none;" tabindex="-1" autocomplete="off">
 
+                    <!-- Customer Name & Phone -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                             <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Your Name *</label>
@@ -816,28 +895,32 @@
                         </div>
                     </div>
 
-                    <!-- Preferred Contact Method (Defaults to "No Preference") -->
+                    <!-- Preferred Contact Method Radio Buttons -->
                     <div>
                         <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Preferred Contact Method *</label>
                         <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <!-- Option 1: No Preference -->
                             <label class="cursor-pointer">
                                 <input type="radio" name="preferred_contact" value="No Preference" checked onchange="toggleEmailField()" class="peer sr-only">
                                 <div class="p-3 rounded-lg bg-navy border border-slate-700 text-center text-sm font-semibold text-slate-300 peer-checked:bg-royal peer-checked:border-royal peer-checked:text-white transition flex items-center justify-center gap-2">
                                     <i class="fa-solid fa-asterisk text-xs"></i> No Preference
                                 </div>
                             </label>
+                            <!-- Option 2: SMS -->
                             <label class="cursor-pointer">
                                 <input type="radio" name="preferred_contact" value="SMS" onchange="toggleEmailField()" class="peer sr-only">
                                 <div class="p-3 rounded-lg bg-navy border border-slate-700 text-center text-sm font-semibold text-slate-300 peer-checked:bg-royal peer-checked:border-royal peer-checked:text-white transition flex items-center justify-center gap-2">
                                     <i class="fa-solid fa-comment-sms"></i> SMS/TXT
                                 </div>
                             </label>
+                            <!-- Option 3: Call -->
                             <label class="cursor-pointer">
-                                <input type="radio" name="preferred_contact" value="Phone" onchange="toggleEmailField()" class="peer sr-only">
+                                <input type="radio" name="preferred_contact" value="Call" onchange="toggleEmailField()" class="peer sr-only">
                                 <div class="p-3 rounded-lg bg-navy border border-slate-700 text-center text-sm font-semibold text-slate-300 peer-checked:bg-royal peer-checked:border-royal peer-checked:text-white transition flex items-center justify-center gap-2">
-                                    <i class="fa-solid fa-phone"></i> Phone
+                                    <i class="fa-solid fa-phone"></i> Call
                                 </div>
                             </label>
+                            <!-- Option 4: Email -->
                             <label class="cursor-pointer">
                                 <input type="radio" name="preferred_contact" value="Email" onchange="toggleEmailField()" class="peer sr-only">
                                 <div class="p-3 rounded-lg bg-navy border border-slate-700 text-center text-sm font-semibold text-slate-300 peer-checked:bg-royal peer-checked:border-royal peer-checked:text-white transition flex items-center justify-center gap-2">
@@ -847,7 +930,7 @@
                         </div>
                     </div>
 
-                    <!-- Conditional Email Field (Hidden unless 'Email' is selected) -->
+                    <!-- Conditional Email Field (Only pops up when 'Email' is chosen above) -->
                     <div id="email-field-container" class="hidden">
                         <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Your Email Address *</label>
                         <input type="email" 
@@ -861,6 +944,7 @@
                                class="w-full bg-navy border border-slate-700 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-royal">
                     </div>
 
+                    <!-- Vehicle Rego & Make/Model -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                             <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Vehicle Rego (Number Plate)</label>
@@ -872,11 +956,13 @@
                         </div>
                     </div>
 
+                    <!-- Message / Enquiry Box -->
                     <div>
-                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Service Required / Enquiry </label>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Service Required / Enquiry</label>
                         <textarea name="enquiry" rows="4" placeholder="Describe what service, repair, or issue you would like us to look at..." class="w-full bg-navy border border-slate-700 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-royal"></textarea>
                     </div>
 
+                    <!-- Submit Button -->
                     <button id="submit-btn" type="submit" class="w-full bg-royal hover:bg-royal-hover text-white font-bold py-4 rounded-xl shadow-lg transition flex justify-center items-center gap-2">
                         <i class="fa-solid fa-paper-plane"></i> <span id="submit-btn-text">Send Booking Request</span>
                     </button>
@@ -887,7 +973,9 @@
 
 
     <!-- =================================================================
-         7. FOOTER SECTION
+         7. FOOTER SECTION (Bottom of the page)
+         HOW TO EDIT:
+         - Update the address, phone number, or hours below if they ever change.
          ================================================================= -->
     <footer class="bg-navy-dark text-slate-400 py-10 border-t border-sky-950 text-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center gap-4 text-center">
@@ -899,7 +987,7 @@
             </div>
 
             <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-xs text-slate-300">
-                <span>11E Parkhouse Road, Wigram</span>
+                <span>11E Parkhouse Road, Wigram, Christchurch</span>
                 <span class="hidden sm:inline text-slate-600">•</span>
                 <span>Phone: 03 420 0818</span>
                 <span class="hidden sm:inline text-slate-600">•</span>
@@ -909,11 +997,15 @@
     </footer>
 
 
-<!-- =================================================================
-         8. SCRIPTS (FUEL TOGGLE & WEBFORM LOGIC)
+    <!-- =================================================================
+         8. WEBSITE SCRIPTS (Interactive Features & Email Subject Builder)
          ================================================================= -->
     <script>
-        // 1. Fuel Type Toggle (Petrol vs Diesel)
+        /* -----------------------------------------------------------------
+           PART A: PETROL VS DIESEL PRICE SWITCHER
+           What this does: When someone clicks "Petrol Vehicle" or "Diesel Vehicle",
+           it swaps the prices on the Gold, Silver, and Bronze service packages.
+           ----------------------------------------------------------------- */
         function setFuelType(type) {
             const btnPetrol = document.getElementById('btn-petrol');
             const btnDiesel = document.getElementById('btn-diesel');
@@ -934,7 +1026,11 @@
             });
         }
 
-        // 2. Show/Hide Email Field Based on Preferred Contact Method
+        /* -----------------------------------------------------------------
+           PART B: SHOW OR HIDE THE EMAIL ADDRESS BOX
+           What this does: Only shows the "Your Email Address" input field
+           if the customer clicks the "Email" contact preference button.
+           ----------------------------------------------------------------- */
         function toggleEmailField() {
             const selectedMethod = document.querySelector('input[name="preferred_contact"]:checked')?.value;
             const emailContainer = document.getElementById('email-field-container');
@@ -946,11 +1042,14 @@
             } else {
                 emailContainer.classList.add('hidden');
                 emailInput.required = false;
-                emailInput.value = ''; // Clear email if they switch away
+                emailInput.value = ''; // Clears the email box if they switch back to SMS/Call
             }
         }
 
-        // 3. Reset Form to Send Another Enquiry
+        /* -----------------------------------------------------------------
+           PART C: RESET THE BOOKING FORM
+           What this does: Resets the form if the user clicks "Send Another Enquiry".
+           ----------------------------------------------------------------- */
         function resetBookingForm() {
             const form = document.getElementById('booking-form');
             const successBox = document.getElementById('form-success-message');
@@ -963,9 +1062,18 @@
             form.classList.remove('hidden');
         }
 
-        // 4. Configure Email Headers & Submit Form In-Page
+        /* -----------------------------------------------------------------
+           PART D: WEB3FORMS SUBJECT LINE BUILDER & FORM SENDER
+           What this does:
+           Builds the exact email subject line you requested based on what
+           the customer chooses:
+           - No Preference: "Enquiry: [no pref] | their name | vehicle"
+           - SMS:           "Enquiry: [SMS preferred] | their name | vehicle | phone num"
+           - Call:          "Enquiry: [Call preferred] | their name | vehicle | ph number"
+           - Email:         "Enquiry: [Email preferred] | their name | vehicle | email address"
+           ----------------------------------------------------------------- */
         document.getElementById('booking-form').addEventListener('submit', async function(event) {
-            event.preventDefault(); // Prevents redirecting away from the page
+            event.preventDefault(); // Stops the page from reloading when submitted
 
             const form = event.target;
             const selectedMethod = document.querySelector('input[name="preferred_contact"]:checked')?.value || 'No Preference';
@@ -979,70 +1087,75 @@
             const successBox = document.getElementById('form-success-message');
             const errorBox = document.getElementById('form-error-message');
 
-            // Grab customer inputs
+            // 1. Read what the customer typed into the boxes
             const customerName = form.elements['name']?.value.trim() || 'Customer';
-            const customerPhone = form.elements['phone']?.value.trim() || '';
+            const customerPhone = form.elements['phone']?.value.trim() || 'No Phone';
             const carDetails = form.elements['car_details']?.value.trim() || '';
             const rego = form.elements['rego']?.value.trim().toUpperCase() || '';
-            const customerEmail = emailInput ? emailInput.value.trim() : '';
+            const customerEmail = emailInput ? emailInput.value.trim() : 'No Email';
 
-            // Clean number and build international +64 format for automatic smartphone tap-to-call
+            // 2. Combine Car Details & Rego nicely for the "vehicle" part of the subject line
+            let vehicleText = '';
+            if (carDetails && rego) {
+                vehicleText = `${carDetails} (${rego})`;
+            } else if (carDetails) {
+                vehicleText = carDetails;
+            } else if (rego) {
+                vehicleText = rego;
+            } else {
+                vehicleText = 'No Vehicle Listed';
+            }
+
+            // 3. Format the phone number with +64 so you can tap-to-call inside the email body
             let digitsOnly = customerPhone.replace(/[^0-9]/g, '');
             if (digitsOnly.startsWith('0')) {
                 digitsOnly = '64' + digitsOnly.slice(1);
-            } else if (!digitsOnly.startsWith('64')) {
+            } else if (digitsOnly && !digitsOnly.startsWith('64')) {
                 digitsOnly = '64' + digitsOnly;
             }
-            const intlPhone = '+' + digitsOnly;
+            const intlPhone = digitsOnly ? ('+' + digitsOnly) : customerPhone;
 
-            // Pick ONLY ONE between car details or rego
-            const vehicleOrRego = carDetails ? ` - ${carDetails}` : (rego ? ` - ${rego}` : '');
-
-            // Subject Line & Action Link configuration
-            let prefix = '';
-            let contactDetail = '';
+            // 4. Build the exact Subject Line based on their Contact Preference
+            let finalSubject = '';
             let actionValue = '';
 
             if (selectedMethod === 'SMS') {
-                prefix = '[SMS preferred]';
-                contactDetail = customerPhone ? ` - ${customerPhone}` : '';
+                // Format: Enquiry: [SMS preferred] | their name | vehicle | phone num
+                finalSubject = `Enquiry: [SMS preferred] | ${customerName} | ${vehicleText} | ${customerPhone}`;
                 replyToInput.value = '';
                 fromNameInput.value = 'Swift & Sons (SMS Preferred)';
-                // Direct WhatsApp / Web-compatible link or standard tap number
-                actionValue = `TXT customer at: ${intlPhone} (or reply to phone)`;
-            } else if (selectedMethod === 'Phone') {
-                prefix = '[Phone call preferred]';
-                contactDetail = customerPhone ? ` - ${customerPhone}` : '';
+                actionValue = `TXT customer at: ${intlPhone}`;
+
+            } else if (selectedMethod === 'Call') {
+                // Format: Enquiry: [Call preferred] | their name | vehicle | ph number
+                finalSubject = `Enquiry: [Call preferred] | ${customerName} | ${vehicleText} | ${customerPhone}`;
                 replyToInput.value = '';
                 fromNameInput.value = 'Swift & Sons (Call Preferred)';
                 actionValue = `Call customer at: ${intlPhone}`;
+
             } else if (selectedMethod === 'Email') {
-                prefix = '[Email preferred]';
-                contactDetail = customerEmail ? ` - ${customerEmail}` : '';
+                // Format: Enquiry: [Email preferred] | their name | vehicle | email address
+                finalSubject = `Enquiry: [Email preferred] | ${customerName} | ${vehicleText} | ${customerEmail}`;
                 replyToInput.value = customerEmail;
                 fromNameInput.value = 'Swift & Sons (Email Preferred)';
                 actionValue = customerEmail;
+
             } else {
-                // No Preference
-                prefix = '[No Preference for contact]';
-                contactDetail = customerPhone ? ` - ${customerPhone}` : '';
+                // Default / No Preference
+                // Format: Enquiry: [no pref] | their name | vehicle
+                finalSubject = `Enquiry: [no pref] | ${customerName} | ${vehicleText}`;
                 replyToInput.value = '';
                 fromNameInput.value = 'Swift & Sons (No Preference)';
                 actionValue = `Call or TXT at: ${intlPhone}`;
             }
 
-            // Set final email subject
-            subjectInput.value = `${prefix} ${customerName}${vehicleOrRego}${contactDetail}`;
-
-            // Populate the action field with formatted international phone (+64)
-            // Mobile email apps (iPhone Mail & Android Gmail) automatically turn +64... into an instant tap-to-call/tap-to-SMS button
+            // 5. Save the subject line and tap-to-contact helper into the hidden form fields
+            subjectInput.value = finalSubject;
             if (cleanReplyLinkInput) {
-                cleanReplyLinkInput.disabled = false;
-                cleanReplyLinkInput.name = 'Tap_To_Contact';
                 cleanReplyLinkInput.value = actionValue;
             }
 
-            // Show loading state on button
+            // 6. Send the form to Web3Forms in the background
             errorBox.classList.add('hidden');
             submitBtn.disabled = true;
             submitBtnText.textContent = 'Sending...';
