@@ -1208,6 +1208,14 @@
                 const result = await response.json();
 
                 if (result.success) {
+                    // ALSO file this enquiry in the internal workshop app (Enquiries tab).
+                    // Runs in the background after Web3Forms has accepted it, and never delays or breaks the customer's confirmation.
+                    fetch('https://taldkcuzggwyzbaebmuu.supabase.co/functions/v1/new-enquiry', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(Object.fromEntries(formData))
+                    }).catch(() => {});
+
                     form.classList.add('hidden');
                     successBox.classList.remove('hidden');
                 } else {
